@@ -4,16 +4,20 @@
  * ELTD15 - LABORATORIO DE SISTEMAS DIGITAIS
  * TRABALHO II - PROCESSADOR RISC PIPELINED DE 5 ESTAGIOS (GRUPO 11)
  *
+ * Constantes do Grupo 11:
+ *   CteMemProg  = 0x0000_0000 -> BASE_PROG  = 11 * 0x0000 = 0x0000_0000
+ *   CteMemDados = 0x0000_0125 -> BASE_DADOS = 11 * 0x0125 = 0x0000_0C97
+ *
  * Preencher as respostas as alineas a) a g) com os valores extraidos do
  * TimeQuest Timing Analyzer apos a compilacao na FPGA Cyclone IV GX.
  * ============================================================================
  */
 
 module risc #(
-    parameter WIDTH      = 32,
-    parameter GRUPO      = 11,
-    parameter BASE_PROG  = 32'h0000_0000,
-    parameter BASE_DADOS = 32'h0000_0C97
+    parameter WIDTH         = 32,
+    parameter GRUPO         = 11,
+    parameter CTE_MEM_PROG  = 32'h0000_0000,
+    parameter CTE_MEM_DADOS = 32'h0000_0125
 )(
     input  [WIDTH-1:0] Data_BUS_READ,
     input  [WIDTH-1:0] Prog_BUS_READ,
@@ -27,6 +31,9 @@ module risc #(
     output             WE,
     output             CS
 );
+
+    localparam [31:0] BASE_PROG  = GRUPO * CTE_MEM_PROG;  // 32'h0000_0000
+    localparam [31:0] BASE_DADOS = GRUPO * CTE_MEM_DADOS; // 32'h0000_0C97
 
     // =========================================================================
     // 1. Geracao de Relogios (PLL) e Reset Sincronizado
@@ -53,22 +60,18 @@ module risc #(
     wire [WIDTH-1:0] instmem_q;
     wire [9:0]       prog_iAddress;
 
-    // Alinhamento de CS_P, Prog_BUS_READ e flush com a latencia de 1 ciclo da BRAM
     reg              id_CS_P;
     reg  [WIDTH-1:0] id_prog_bus_read;
     reg              flush_if;
 
-    // Sinais de salto/desvio provenientes de ID e EX
     wire             jmpFlag;
     wire [25:0]      jmpAddress;
     wire             branch_taken;
     wire [WIDTH-1:0] branch_target;
 
-    // Endereco de JMP codificado em bytes conforme Code.hex
     wire [WIDTH-1:0] jmp_target = {PC[31:26], jmpAddress};
     wire             jmp_taken  = jmpFlag & ~branch_taken;
 
-    // Prioridade: BNE em EX > JMP em ID > PC + 4
     assign PC_next   = branch_taken ? branch_target :
                        jmp_taken    ? jmp_target    :
                                       PC_plus4;
@@ -84,7 +87,6 @@ module risc #(
         .data_out (PC)
     );
 
-    // ADDRDecoding_Prog.v: CS = 1 -> Memoria Interna; CS = 0 -> Memoria Externa
     ADDRDecoding_Prog #(
         .BASE (BASE_PROG)
     ) u_ADDRDecoding_Prog (
@@ -113,7 +115,6 @@ module risc #(
 
     wire [WIDTH-1:0] inst_mux_out;
 
-    // mux.v: sel = 0 -> data_in_1 (Mem. Externa); sel = 1 -> data_in_2 (Mem. Interna)
     mux #(.WIDTH(WIDTH)) u_mux_inst (
         .data_in_1 (id_prog_bus_read),
         .data_in_2 (instmem_q),
@@ -138,7 +139,6 @@ module risc #(
     wire [1:0]       alu_op;
     wire             alu_src_b, sel_mul, reg_write, mem_read, mem_write, mem_to_reg, reg_dst;
 
-    // Sinais de realimentacao vindos de WB
     (* keep = 1 *) wire [WIDTH-1:0] writeBack_data;
     wire                            wb_reg_write;
     wire [4:0]                      wb_dest;
@@ -216,7 +216,6 @@ module risc #(
     wire             mul_idle, mul_done;
     (* keep = 1 *) wire [WIDTH-1:0] ex_result;
 
-    // mux.v: sel = 0 -> ex_B; sel = 1 -> ex_IMM
     mux #(.WIDTH(WIDTH)) u_mux_alu_b (
         .data_in_1 (ex_B),
         .data_in_2 (ex_IMM),
@@ -232,11 +231,9 @@ module risc #(
         .zero      (alu_zero)
     );
 
-    // Desvio condicional BNE com offset ja codificado em bytes conforme Code.hex
     assign branch_taken  = ex_branch_flag & ~alu_zero;
     assign branch_target = ex_PC_plus4 + ex_IMM;
 
-    // Pulso St de 1 ciclo de CLK_MUL por ciclo de CLK_SYS com MUL ativo
     reg sys_toggle;
     reg sys_toggle_d;
 
@@ -263,7 +260,6 @@ module risc #(
         .Done          (mul_done)
     );
 
-    // mux.v: sel = 0 -> alu_out; sel = 1 -> mul_out
     mux #(.WIDTH(WIDTH)) u_mux_ex_res (
         .data_in_1 (alu_out),
         .data_in_2 (mul_out),
@@ -299,7 +295,6 @@ module risc #(
     assign Data_BUS_WRITE = mem_B;
     assign WE             = mem_mem_write;
 
-    // ADDRDecoding.v: CS = 1 -> Memoria Interna; iWE = CS & WE
     ADDRDecoding #(
         .BASE (BASE_DADOS)
     ) u_ADDRDecoding_Data (
@@ -321,7 +316,7 @@ module risc #(
     wire [6:0] mem_ctrl_out = {mem_reg_write, mem_mem_to_reg, mem_dest};
 
     // =========================================================================
-    // Registrador de Pipeline: MEM/WB (D, CTRL e alinhamento de CS/Data_BUS_READ)
+    // Registrador de Pipeline: MEM/WB
     // =========================================================================
     (* keep = 1 *) wire [WIDTH-1:0] wb_D;
     (* keep = 1 *) wire [WIDTH-1:0] wb_M;
@@ -341,7 +336,6 @@ module risc #(
     wire   wb_mem_to_reg = wb_CTRL[5];
     assign wb_dest       = wb_CTRL[4:0];
 
-    // mux.v: sel = 0 -> wb_ext_data (Mem. Externa); sel = 1 -> datamem_q (Mem. Interna)
     mux #(.WIDTH(WIDTH)) u_mux_mem (
         .data_in_1 (wb_ext_data),
         .data_in_2 (datamem_q),
@@ -349,7 +343,6 @@ module risc #(
         .data_out  (wb_M)
     );
 
-    // mux.v: sel = 0 -> wb_D (ALU/MUL); sel = 1 -> wb_M (Memoria)
     mux #(.WIDTH(WIDTH)) u_mux_wb (
         .data_in_1 (wb_D),
         .data_in_2 (wb_M),

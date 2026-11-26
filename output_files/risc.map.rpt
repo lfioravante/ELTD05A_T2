@@ -1,5 +1,5 @@
 Analysis & Synthesis report for risc
-Thu Nov 26 19:32:57 2026
+Thu Nov 26 20:40:27 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -88,7 +88,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 26 19:32:57 2026       ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov 26 20:40:27 2026       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; risc                                        ;
 ; Top-level Entity Name              ; risc                                        ;
@@ -1273,8 +1273,8 @@ Encoding Type:  One-Hot
 +----------------+----------------------------------+------------------+
 ; WIDTH          ; 32                               ; Signed Integer   ;
 ; GRUPO          ; 11                               ; Signed Integer   ;
-; BASE_PROG      ; 00000000000000000000000000000000 ; Unsigned Binary  ;
-; BASE_DADOS     ; 00000000000000000000110010010111 ; Unsigned Binary  ;
+; CTE_MEM_PROG   ; 00000000000000000000000000000000 ; Unsigned Binary  ;
+; CTE_MEM_DADOS  ; 00000000000000000000000100100101 ; Unsigned Binary  ;
 +----------------+----------------------------------+------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -2177,7 +2177,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Nov 26 19:32:23 2026
+    Info: Processing started: Thu Nov 26 20:39:53 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off risc -c risc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -2249,11 +2249,11 @@ Info (12021): Found 1 design units, including 1 entities, in source file Multipl
 Info (12021): Found 1 design units, including 1 entities, in source file PLL/PLL.v
     Info (12023): Found entity 1: PLL File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/PLL/PLL.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file risc.v
-    Info (12023): Found entity 1: risc File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 12
+    Info (12023): Found entity 1: risc File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file risc_TB.v
-    Info (12023): Found entity 1: risc_TB File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc_TB.v Line: 2
+    Info (12023): Found entity 1: risc_TB File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc_TB.v Line: 3
 Info (12127): Elaborating entity "risc" for the top level hierarchy
-Info (12128): Elaborating entity "PLL" for hierarchy "PLL:u_PLL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 44
+Info (12128): Elaborating entity "PLL" for hierarchy "PLL:u_PLL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 51
 Info (12128): Elaborating entity "altpll" for hierarchy "PLL:u_PLL|altpll:altpll_component" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/PLL/PLL.v Line: 107
 Info (12130): Elaborated megafunction instantiation "PLL:u_PLL|altpll:altpll_component" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/PLL/PLL.v Line: 107
 Info (12133): Instantiated megafunction "PLL:u_PLL|altpll:altpll_component" with the following parameter: File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/PLL/PLL.v Line: 107
@@ -2319,9 +2319,9 @@ Info (12133): Instantiated megafunction "PLL:u_PLL|altpll:altpll_component" with
 Info (12021): Found 1 design units, including 1 entities, in source file db/PLL_altpll.v
     Info (12023): Found entity 1: PLL_altpll File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/db/PLL_altpll.v Line: 29
 Info (12128): Elaborating entity "PLL_altpll" for hierarchy "PLL:u_PLL|altpll:altpll_component|PLL_altpll:auto_generated" File: /home/lucas/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "pc" for hierarchy "pc:u_pc" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 85
-Info (12128): Elaborating entity "ADDRDecoding_Prog" for hierarchy "ADDRDecoding_Prog:u_ADDRDecoding_Prog" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 94
-Info (12128): Elaborating entity "InstMem" for hierarchy "InstMem:u_InstMem" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 100
+Info (12128): Elaborating entity "pc" for hierarchy "pc:u_pc" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 88
+Info (12128): Elaborating entity "ADDRDecoding_Prog" for hierarchy "ADDRDecoding_Prog:u_ADDRDecoding_Prog" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 96
+Info (12128): Elaborating entity "InstMem" for hierarchy "InstMem:u_InstMem" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 102
 Info (12128): Elaborating entity "altsyncram" for hierarchy "InstMem:u_InstMem|altsyncram:altsyncram_component" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/InstMem.v Line: 81
 Info (12130): Elaborated megafunction instantiation "InstMem:u_InstMem|altsyncram:altsyncram_component" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/InstMem.v Line: 81
 Info (12133): Instantiated megafunction "InstMem:u_InstMem|altsyncram:altsyncram_component" with the following parameter: File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/InstMem.v Line: 81
@@ -2342,8 +2342,7 @@ Info (12133): Instantiated megafunction "InstMem:u_InstMem|altsyncram:altsyncram
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jv91.tdf
     Info (12023): Found entity 1: altsyncram_jv91 File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/db/altsyncram_jv91.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_jv91" for hierarchy "InstMem:u_InstMem|altsyncram:altsyncram_component|altsyncram_jv91:auto_generated" File: /home/lucas/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Critical Warning (127005): Memory depth (1024) in the design file differs from memory depth (29) in the Memory Initialization File "/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Code.hex" -- setting initial value for remaining addresses to 0 File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/InstMem.v Line: 81
-Info (12128): Elaborating entity "mux" for hierarchy "mux:u_mux_inst" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 122
+Info (12128): Elaborating entity "mux" for hierarchy "mux:u_mux_inst" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 123
 Info (12128): Elaborating entity "registerfile" for hierarchy "registerfile:u_registerfile" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 159
 Warning (10240): Verilog HDL Always Construct warning at registerfile.v(21): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/registerfile.v Line: 21
 Info (12128): Elaborating entity "control" for hierarchy "control:u_control" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 174
@@ -2356,15 +2355,15 @@ Warning (10230): Verilog HDL assignment warning at control.v(37): truncated valu
 Info (12128): Elaborating entity "extend" for hierarchy "extend:u_extend" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 182
 Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_IDEX_A" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 194
 Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_IDEX_CTRL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 198
-Info (12128): Elaborating entity "alu" for hierarchy "alu:u_alu" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 233
-Info (12128): Elaborating entity "Multiplicador" for hierarchy "Multiplicador:u_Multiplicador" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 264
+Info (12128): Elaborating entity "alu" for hierarchy "alu:u_alu" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 232
+Info (12128): Elaborating entity "Multiplicador" for hierarchy "Multiplicador:u_Multiplicador" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 261
 Info (12128): Elaborating entity "Adder" for hierarchy "Multiplicador:u_Multiplicador|Adder:adder" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Multiplicador/Multiplicador.v Line: 26
 Info (12128): Elaborating entity "ACC" for hierarchy "Multiplicador:u_Multiplicador|ACC:acc" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Multiplicador/Multiplicador.v Line: 36
 Info (12128): Elaborating entity "CONTROL" for hierarchy "Multiplicador:u_Multiplicador|CONTROL:control" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Multiplicador/Multiplicador.v Line: 49
 Info (12128): Elaborating entity "Counter" for hierarchy "Multiplicador:u_Multiplicador|Counter:counter" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Multiplicador/Multiplicador.v Line: 57
-Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_EXMEM_CTRL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 284
-Info (12128): Elaborating entity "ADDRDecoding" for hierarchy "ADDRDecoding:u_ADDRDecoding_Data" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 311
-Info (12128): Elaborating entity "datamemory" for hierarchy "datamemory:u_datamemory" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 319
+Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_EXMEM_CTRL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 280
+Info (12128): Elaborating entity "ADDRDecoding" for hierarchy "ADDRDecoding:u_ADDRDecoding_Data" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 306
+Info (12128): Elaborating entity "datamemory" for hierarchy "datamemory:u_datamemory" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 314
 Info (12128): Elaborating entity "altsyncram" for hierarchy "datamemory:u_datamemory|altsyncram:altsyncram_component" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/datamemory.v Line: 85
 Info (12130): Elaborated megafunction instantiation "datamemory:u_datamemory|altsyncram:altsyncram_component" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/datamemory.v Line: 85
 Info (12133): Instantiated megafunction "datamemory:u_datamemory|altsyncram:altsyncram_component" with the following parameter: File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/datamemory.v Line: 85
@@ -2386,110 +2385,110 @@ Info (12133): Instantiated megafunction "datamemory:u_datamemory|altsyncram:alts
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_28i1.tdf
     Info (12023): Found entity 1: altsyncram_28i1 File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/db/altsyncram_28i1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_28i1" for hierarchy "datamemory:u_datamemory|altsyncram:altsyncram_component|altsyncram_28i1:auto_generated" File: /home/lucas/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_MEMWB_CS" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 334
-Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_MEMWB_CTRL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 335
-Info (13000): Registers with preset signals will power-up high File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 59
+Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_MEMWB_CS" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 329
+Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_MEMWB_CTRL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 330
+Info (13000): Registers with preset signals will power-up high File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 65
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "PC[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "PC[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 49
-    Info (17048): Logic cell "mem_D[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_D[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_B[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 279
-    Info (17048): Logic cell "mem_CTRL[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 280
+    Info (17048): Logic cell "PC[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "mem_D[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_D[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_B[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
+    Info (17048): Logic cell "mem_CTRL[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 276
     Info (17048): Logic cell "ex_PC_plus4[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
     Info (17048): Logic cell "ex_IMM[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
     Info (17048): Logic cell "ex_CTRL[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
@@ -2624,52 +2623,52 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "ex_PC_plus4[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
     Info (17048): Logic cell "ex_CTRL[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
     Info (17048): Logic cell "ex_CTRL[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
-    Info (17048): Logic cell "wb_CTRL[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 328
-    Info (17048): Logic cell "wb_CTRL[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 328
-    Info (17048): Logic cell "wb_CTRL[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 328
-    Info (17048): Logic cell "wb_CTRL[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 328
-    Info (17048): Logic cell "wb_CTRL[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 328
-    Info (17048): Logic cell "wb_CTRL[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 328
-    Info (17048): Logic cell "wb_D[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_CTRL[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 328
-    Info (17048): Logic cell "wb_D[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "wb_D[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 326
-    Info (17048): Logic cell "mem_CTRL[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 280
-    Info (17048): Logic cell "mem_CTRL[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 280
-    Info (17048): Logic cell "mem_CTRL[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 280
-    Info (17048): Logic cell "mem_CTRL[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 280
-    Info (17048): Logic cell "mem_CTRL[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 280
-    Info (17048): Logic cell "mem_CTRL[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 280
-    Info (17048): Logic cell "mem_CTRL[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 280
+    Info (17048): Logic cell "wb_CTRL[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 323
+    Info (17048): Logic cell "wb_CTRL[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 323
+    Info (17048): Logic cell "wb_CTRL[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 323
+    Info (17048): Logic cell "wb_CTRL[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 323
+    Info (17048): Logic cell "wb_CTRL[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 323
+    Info (17048): Logic cell "wb_CTRL[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 323
+    Info (17048): Logic cell "wb_D[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_CTRL[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 323
+    Info (17048): Logic cell "wb_D[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "wb_D[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
+    Info (17048): Logic cell "mem_CTRL[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 276
+    Info (17048): Logic cell "mem_CTRL[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 276
+    Info (17048): Logic cell "mem_CTRL[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 276
+    Info (17048): Logic cell "mem_CTRL[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 276
+    Info (17048): Logic cell "mem_CTRL[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 276
+    Info (17048): Logic cell "mem_CTRL[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 276
+    Info (17048): Logic cell "mem_CTRL[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 276
     Info (17048): Logic cell "ex_CTRL[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
     Info (17048): Logic cell "ex_CTRL[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
     Info (17048): Logic cell "ex_CTRL[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
@@ -2685,10 +2684,10 @@ Info (21057): Implemented 3606 device resources after synthesis - the final reso
     Info (21061): Implemented 3376 logic cells
     Info (21064): Implemented 64 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 1113 megabytes
-    Info: Processing ended: Thu Nov 26 19:32:57 2026
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 1110 megabytes
+    Info: Processing ended: Thu Nov 26 20:40:27 2026
     Info: Elapsed time: 00:00:34
-    Info: Total CPU time (on all processors): 00:01:10
+    Info: Total CPU time (on all processors): 00:01:11
 
 
