@@ -1,0 +1,68 @@
+`timescale 1ns / 100ps
+
+module ACC_TB;
+    reg load, sh, ad, clk, rst;
+    reg  [8:0] entradas;
+    wire [8:0] saidas;
+    
+    // Descritor de ficheiro
+    integer file_out;
+
+    ACC dut (
+        .Load(load),
+        .Sh(sh),
+        .Ad(ad),
+        .Clk(clk),
+        .rst(rst),
+        .Entradas(entradas),
+        .Saidas(saidas)
+    );
+
+    initial begin
+        clk = 1'b0;
+        forever #5 clk = ~clk;
+    end
+
+    initial begin
+        load = 1'b0; sh = 1'b0; ad = 1'b0;
+        entradas = 9'b0; rst = 1'b1;
+        
+        @(negedge clk);
+        @(negedge clk);
+        rst = 1'b0;
+
+        @(negedge clk);
+        entradas = {5'b00000, 4'b1011};
+        load = 1'b1;
+        @(negedge clk);
+        load = 1'b0;
+        
+        @(negedge clk);
+        entradas = {5'b11101, 4'b0000}; 
+        ad = 1'b1;
+        @(negedge clk);
+        ad = 1'b0;
+
+        @(negedge clk);
+        sh = 1'b1;
+        repeat(2) @(negedge clk);
+        sh = 1'b0;
+
+        @(negedge clk);
+        $fclose(file_out);
+        $finish;
+    end
+
+    initial begin
+        // Abertura do ficheiro para escrita
+        file_out = $fopen("resultados_acc.txt", "w");
+        
+        // Monitoramento no terminal
+        $monitor("Tempo=%0t | Load=%b | Ad=%b | Sh=%b | Entradas=%b | Saidas=%b", 
+                 $time, load, ad, sh, entradas, saidas);
+                 
+        // Monitoramento direccionado ao ficheiro
+        $fmonitor(file_out, "Tempo=%0t | Load=%b | Ad=%b | Sh=%b | Entradas=%b | Saidas=%b", 
+                  $time, load, ad, sh, entradas, saidas);
+    end
+endmodule

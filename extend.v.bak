@@ -1,0 +1,9 @@
+module extend #(parameter ADDR_WIDTH_IN = 16,parameter ADDR_WIDTH_OUT = 32)(
+	input [ADDR_WIDTH_IN-1:0] in,
+	output [ADDR_WIDTH_OUT-1:0] out
+);
+	assign out = { {16{in[ADDR_WIDTH_IN-1]}}, in};
+
+endmodule
+	
+	

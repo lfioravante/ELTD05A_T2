@@ -1,0 +1,44 @@
+`timescale 1ns/1ps
+module Adder_TB;
+
+	reg [15:0] OperandoA;
+	reg [15:0] OperandoB;
+	wire [16:0] Soma;
+	
+	Adder #(.WIDTH(16)) DUT (.OperandoA(OperandoA), .OperandoB(OperandoB), .Soma(Soma));
+	
+	initial begin
+		OperandoA = 16'h5;
+		OperandoB = 16'h3;
+		#10
+		if(Soma !== 17'h00008 )
+			$display("ERRO 1: Soma=%h", Soma);
+		else
+			$display("OK 1:   Soma=%h", Soma);
+		
+		OperandoA = 16'h0;
+		OperandoB = 16'h0;
+		#10
+		if(Soma !== 17'h00000 )
+			$display("ERRO 2: Soma=%h", Soma);
+		else
+			$display("OK 2:   Soma=%h", Soma);
+		
+		OperandoA = 16'hFFFF;
+		OperandoB = 16'h0001;
+		#10
+		if(Soma !== 17'h10000 )
+			$display("ERRO 3: Soma=%h", Soma);
+		else
+			$display("OK 3:   Soma=%h", Soma);
+		
+		OperandoA = 16'hFFFF;
+		OperandoB = 16'hFFFF;
+		#10
+		if(Soma !== 17'h1FFFE )
+			$display("ERRO 4: Soma=%h", Soma);
+		else
+			$display("OK 4:   Soma=%h", Soma);
+		$stop;
+	end
+endmodule

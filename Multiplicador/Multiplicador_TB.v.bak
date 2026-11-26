@@ -1,0 +1,107 @@
+`timescale 1ns / 1ps
+
+module Multiplicador_TB;
+
+    // Sinais de Entrada
+    reg [3:0] multiplicando;
+    reg [3:0] multiplicador;
+    reg st;
+    reg clk;
+    reg rst;
+
+    // Sinais de Saída
+    wire [7:0] produto;
+    wire idle;
+    wire done;
+
+    // Descritor para gravação de arquivo
+    integer file_out;
+
+    // Instanciação do módulo sob teste (DUT)
+    Multiplicador dut (
+        .Multiplicando(multiplicando),
+        .Multiplicador(multiplicador),
+        .St(st),
+        .Clk(clk),
+        .rst(rst),
+        .Produto(produto),
+        .Idle(idle),
+        .Done(done)
+    );
+
+    // Geração de Clock (Período de 10 unidades de tempo)
+    initial begin
+        clk = 1'b0;
+        forever #5 clk = ~clk;
+    end
+
+    // Estímulos de Teste sincronizados com a borda de descida
+    initial begin
+        // 1. Inicialização dos sinais
+        multiplicando = 4'd0;
+        multiplicador = 4'd0;
+        st = 1'b0;
+        rst = 1'b1;
+
+        // 2. Liberação do Reset (após ciclos de estabilização)
+        @(negedge clk);
+        @(negedge clk);
+        rst = 1'b0;
+
+        // 3. Teste A: 3 x 4 = 12
+        @(negedge clk);
+        multiplicando = 4'd3;
+        multiplicador = 4'd4;
+        st = 1'b1;
+        
+        @(negedge clk);
+        st = 1'b0;
+        
+        wait (done == 1'b1);
+        @(negedge clk);
+
+        // 4. Teste B: 13 x 11 = 143
+        @(negedge clk);
+        multiplicando = 4'd13;
+        multiplicador = 4'd11;
+        st = 1'b1;
+        
+        @(negedge clk);
+        st = 1'b0;
+        
+        wait (done == 1'b1);
+        @(negedge clk);
+
+        // 5. Teste C: 15 x 15 = 225
+        @(negedge clk);
+        multiplicando = 4'd15;
+        multiplicador = 4'd15;
+        st = 1'b1;
+        
+        @(negedge clk);
+        st = 1'b0;
+        
+        wait (done == 1'b1);
+        @(negedge clk);
+        @(negedge clk);
+
+        // Fechamento do arquivo e encerramento da simulação
+        $fclose(file_out);
+        $finish;
+    end
+
+    // Tarefa de monitoramento dinâmico via console e arquivo
+    initial begin
+        // Abertura do arquivo para escrita
+        file_out = $fopen("resultados_multiplicador.txt", "w");
+        
+        // Monitoramento no console
+        $monitor("Tempo: %0t | rst=%b | st=%b | Multiplicando=%d | Multiplicador=%d | Produto=%d | Idle=%b | Done=%b",
+                 $time, rst, st, multiplicando, multiplicador, produto, idle, done);
+                 
+        // Monitoramento direcionado ao arquivo de texto
+        $fmonitor(file_out, "Tempo: %0t | rst=%b | st=%b | Multiplicando=%d | Multiplicador=%d | Produto=%d | Idle=%b | Done=%b",
+                  $time, rst, st, multiplicando, multiplicador, produto, idle, done);
+    end
+
+endmodule

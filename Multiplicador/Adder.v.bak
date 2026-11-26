@@ -1,0 +1,9 @@
+module Adder #(parameter WIDTH = 16)(
+	input [WIDTH-1:0] Op_A,
+	input [WIDTH-1:0] Op_B,
+	output [WIDTH:0] Soma
+);
+
+	assign Soma = Op_A + Op_B;
+	
+endmodule

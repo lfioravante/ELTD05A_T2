@@ -1,0 +1,22 @@
+module Counter (
+    input Load, Sh, Clk, rst,
+    output K
+);
+    // Registrador interno dimensionado para contar as iterações
+    reg [2:0] count;
+
+    // A flag K sinaliza a conclusão durante a avaliação da 4ª iteração (count == 3)
+    assign K = (count == 3'd3);
+
+    // Bloco sequencial de incremento e reinicialização
+    always @(posedge Clk or posedge rst) begin
+        if (rst) begin
+            count <= 3'd0;
+        end else if (Load) begin
+            count <= 3'd0;
+        end else if (Sh) begin
+            count <= count + 1'b1;
+        end
+    end
+
+endmodule

@@ -1,0 +1,7 @@
+`timescale 1ns/1ps
+module ADDRDecoding_Prog_TB;
+	reg  [31:0] ADDR;
+   wire        CS;
+   wire [9:0]  iAddress;
+	
+	ADDRDecoding_Prog #(32) DUT (.ADDR(ADDR), .CS(CS), .iAddress(iAddress));

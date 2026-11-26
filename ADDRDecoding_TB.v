@@ -1,0 +1,54 @@
+`timescale 1ns/1ps
+module ADDRDecoding_TB;
+	reg  [31:0] ADDR;
+	reg         WE;
+	wire        CS;
+	wire [9:0]  iAddress;
+	wire        iWE;
+
+	ADDRDecoding #(.BASE(32'hC97)) DUT (.ADDR(ADDR), .WE(WE), .CS(CS), .iAddress(iAddress), .iWE(iWE));
+	
+	initial begin
+		ADDR = 32'hC97;
+		WE = 0;
+		#10
+		if(iAddress !== 10'h00 || iWE !== 1'b0 || CS !== 1'b1)
+			$display("ERRO 1: ADDR=%h | CS=%b (esp 1) | iAddress=%0d (esp 0)", ADDR, CS, iAddress);
+		else
+			$display("OK 1:   ADDR=%h | CS=%b | iAddress=%0d", ADDR, CS, iAddress);
+			
+		ADDR = 32'hC98;
+		WE = 1;
+		#10
+		if(iAddress !== 10'h001 || iWE !== 1'b1 || CS !== 1'b1)
+			$display("ERRO 2: ADDR=%h | CS=%b (esp 1) | iAddress=%0d (esp 1)", ADDR, CS, iAddress);
+		else
+			$display("OK 2:   ADDR=%h | CS=%b | iAddress=%0d", ADDR, CS, iAddress);
+			
+		ADDR = 32'h1096;
+		WE = 1;
+		#10
+		if(iAddress !== ('h3FF) || iWE !== 1'b1 || CS !== 1'b1)
+			$display("ERRO 3: ADDR=%h | CS=%b (esp 1) | iAddress=%0d (esp 1023)", ADDR, CS, iAddress);
+		else
+			$display("OK 3:   ADDR=%h | CS=%b | iAddress=%0d", ADDR, CS, iAddress);
+			
+		ADDR = 32'hC96;
+		WE = 1;
+		#10
+		if(iWE !== 1'b0 || CS !== 1'b0)
+			$display("ERRO 4: ADDR=%h | CS=%b (esp 1) | iAddress=%0d (esp 1023)", ADDR, CS, iAddress);
+		else
+			$display("OK 4:   CS=%b | iWE", CS, iWE);			
+		ADDR = 32'h1097;
+		WE = 1;
+		#10
+		if(iWE !== 1'b0 || CS !== 1'b0)
+			$display("ERRO 5: ADDR=%h | CS=%b (esp 1) | iAddress=%0d (esp 1023)", ADDR, CS, iAddress);
+		else
+			$display("OK 5:   CS=%b | iWE", CS, iWE);
+
+			
+		$stop;
+	end
+endmodule

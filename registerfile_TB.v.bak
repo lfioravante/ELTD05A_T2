@@ -1,0 +1,42 @@
+timescale 1ns/1ps
+module registerfile_TB;
+	reg clk, reset, wr;
+	reg  [31:0] dataIn;
+	reg  [4:0]  wrAddress, rdAddress1, rdAddress2;
+	wire [31:0] dataOut1, dataOut2;
+
+	registerfile #(.DATA_WIDTH(32), .ADDR_WIDTH(5)) dut (
+		.clk(clk), .reset(reset), .wr(wr), .dataIn(dataIn),
+		.wrAddress(wrAddress), .rdAddress1(rdAddress1),
+		.rdAddress2(rdAddress2), .dataOut1(dataOut1), .dataOut2(dataOut2)
+	);
+
+	always #10 clk = ~clk;
+
+	initial begin
+		clk = 0; 
+		reset = 1; 
+		wr = 0; 
+		dataIn = 0;
+		wrAddress = 0; 
+		rdAddress1 = 0; 
+		rdAddress2 = 0;
+		#25 
+		reset = 0;          // solta o reset longe da borda
+		// 1) escrever r5 e ler pelas DUAS portas
+		wr = 1;
+		wrAddress = 5;
+		#15
+		wr = 0;
+		rdAddress1 = 1;
+		rdAddress2 = 2;
+		#20
+		
+		// 2) tentar escrever em r0 com wr=1 e conferir que continua 0
+		// 3) wr=0 com dataIn diferente: r5 não pode mudar
+		// 4) escrever em outro registrador (r7) e conferir que r5 não mudou
+		// 5) reset no meio: tudo volta a 0
+		// 6) leitura e escrita do mesmo registrador no mesmo ciclo
+		$stop;
+	end
+endmodule

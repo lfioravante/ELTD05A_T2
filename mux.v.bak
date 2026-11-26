@@ -1,0 +1,11 @@
+module mux #(parameter ADDR = 32)(
+	input [ADDR-1:0] data_in_1,
+	input [ADDR-1:0] data_in_2,
+	input sel,
+	output [ADDR-1:0] data_out
+);
+	
+	assign data_out = sel ? data_in_1 : data_in_2;
+	
+endmodule	
+	

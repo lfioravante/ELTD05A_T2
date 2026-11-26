@@ -1,0 +1,64 @@
+`timescale 1ns/1ps
+module InstMem_TB;
+	reg [9:0] address;
+	reg clock;
+	wire [31:0] q
+
+	InstMem  DUT (.address(address), .clock(clock), .q(q));
+	
+	initial clk = 0;
+	always #10 clk = ~clk;
+	
+	initial begin
+		
+		#15
+		if(q !== 32'h0)
+			$display("ERRO 1: address=%h || saida:%h", address, q);
+		else
+			$display("OK 1: address=%h || saida:%h", address, q);
+			
+		address = 32'h001;	
+		#10
+			$display("saida antiga ainda: saida=%h", q);
+		if(q !== 32'h000)
+			$display("ERRO 2: address=%h || saida:%h", address, q);
+		else
+			$display("OK 2: address=%h || saida:%h", address, q);
+			
+		#10
+		
+		if(q !== 32'hBC1E0020)
+			$display("ERRO 3: address=%h || saida:%h", address, q);
+		else
+			$display("OK 3: address=%h || saida:%h", address, q);
+		
+		address = 5;
+		#20
+		if(q !== 32'hAFE10C97)
+			$display("ERRO 4: address=%h || saida:%h", address, q);
+		else
+			$display("OK 4: address=%h || saida:%h", address, q);
+		
+		address = 1023;
+		#20
+		if(q !== 32'h0)
+			$display("ERRO 5: address=%h || saida:%h", address, q);
+		else
+			$display("OK 5: address=%h || saida:%h", address, q);
+
+		address = 28;
+		#20
+		if(q !== 32'h08000004)
+			$display("ERRO 6: address=%h || saida:%h", address, q);
+		else
+			$display("OK 6: address=%h || saida:%h", address, q);
+			
+		address = 29;
+		#20
+		if(q !== 32'h0)
+			$display("ERRO 7: address=%h || saida:%h", address, q);
+		else
+			$display("OK 7: address=%h || saida:%h", address, q);
+		$stop;
+	end
+endmodule

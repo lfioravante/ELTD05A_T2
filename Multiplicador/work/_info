@@ -1,0 +1,220 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/works/Multiplicador
+vACC
+Z1 !s110 1795381718
+!i10b 1
+!s100 P>>YA]<Q>IAPhjT4W_l6B1
+IiU6hU;lc0NcnSo`f=SiQk1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1795354494
+8ACC.v
+FACC.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1795381718.000000
+Z5 !s107 Multiplicador_TB.v|Multiplicador.v|CONTROL.v|ACC.v|Counter.v|Adder.v|
+Z6 !s90 -reportprogress|300|Adder.v|Counter.v|ACC.v|CONTROL.v|Multiplicador.v|Multiplicador_TB.v|
+!i113 1
+Z7 tCvgOpt 0
+n@a@c@c
+vACC_TB
+!s110 1795355141
+!i10b 1
+!s100 L7V^IoL<f=<GZ`g>U4NU92
+IGfK8CSFCO7ziKdJh82^z_3
+R2
+R0
+w1795355135
+8ACC_TB.v
+FACC_TB.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1795355141.000000
+!s107 ACC_TB.v|ACC.v|
+!s90 -reportprogress|300|ACC.v|ACC_TB.v|
+!i113 1
+R7
+n@a@c@c_@t@b
+vAdder
+R1
+!i10b 1
+!s100 =8KVHAN66hi:2:PJncPO^1
+I>6Wm7QO<9AiQoOkTH`:Xn3
+R2
+R0
+w1795351440
+8Adder.v
+FAdder.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+n@adder
+vAdder_TB
+!s110 1795351965
+!i10b 1
+!s100 L8jbE]GVK0<ZYPU[nAa7Q0
+IcRVKj69R3<fiV[kiN5Ci71
+R2
+R0
+w1795351923
+8Adder_TB.v
+FAdder_TB.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1795351965.000000
+!s107 Adder_TB.v|Adder.v|
+!s90 -reportprogress|300|Adder.v|Adder_TB.v|
+!i113 1
+R7
+n@adder_@t@b
+vCONTROL
+R1
+!i10b 1
+!s100 SDnkKJQIUZDXhc1:Hc[fT1
+I]_A^2j3NV22<ke^213c0T1
+R2
+R0
+w1795352143
+8CONTROL.v
+FCONTROL.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+n@c@o@n@t@r@o@l
+vCONTROL_TB
+!s110 1795367531
+!i10b 1
+!s100 Mlg4Tg?PjEn>djJ^@`kFl0
+IMfVY=U[?Tje4;jF>lPJfm0
+R2
+R0
+w1795367489
+8CONTROL_TB.v
+FCONTROL_TB.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1795367531.000000
+!s107 CONTROL_TB.v|CONTROL.v|
+!s90 -reportprogress|300|CONTROL.v|CONTROL_TB.v|
+!i113 1
+R7
+n@c@o@n@t@r@o@l_@t@b
+vCounter
+R1
+!i10b 1
+!s100 Ad[3:Pk1lL6>zGlmIzY780
+I5BFmeKmh@?lNFj02oG=lQ1
+R2
+R0
+w1795352655
+8Counter.v
+FCounter.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+n@counter
+vCounter_TB
+!s110 1795353710
+!i10b 1
+!s100 NMELnU`N[[blX[@D^CZW83
+ISliQ01?kX3BBel[KNU0jj3
+R2
+R0
+w1795353706
+8Counter_TB.v
+FCounter_TB.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1795353710.000000
+!s107 Counter_TB.v|Counter.v|
+!s90 -reportprogress|300|Counter.v|Counter_TB.v|
+!i113 1
+R7
+n@counter_@t@b
+vMultiplicador
+R1
+!i10b 1
+!s100 _DfhS6z<KzaIEjl2gDh]F1
+IbV0z<m<Fb76:9d2oUi;an3
+R2
+R0
+w1795368009
+8Multiplicador.v
+FMultiplicador.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+n@multiplicador
+vMultiplicador_TB
+R1
+!i10b 1
+!s100 ?EQ2jM?LnCd6Pf;j^2bSe0
+I[BZE9EQUkG[^6hR68B4oY0
+R2
+R0
+w1795381713
+8Multiplicador_TB.v
+FMultiplicador_TB.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+n@multiplicador_@t@b

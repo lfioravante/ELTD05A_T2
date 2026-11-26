@@ -1,0 +1,133 @@
+`timescale 1ns/1ps
+
+module control #(
+    parameter integer GRUPO = 11
+)(
+    input  wire [31:0] inst,          
+    input  wire [31:0] reg_data_a,   
+    input  wire [31:0] reg_data_b,    
+    output reg  [25:0] jmpAddress,   
+    output reg         jmpFlag,      
+    output reg         branchFlag,    
+    output reg  [3:0]  alu_op,        
+    output reg         alu_src_b,     
+    output reg         mult_start,   
+    output reg         reg_write,     
+    output reg         mem_read,   
+    output reg         mem_write,     
+    output reg         mem_to_reg     
+);
+
+    wire [5:0]  opcode   = inst[31:26];
+    wire [5:0]  funct    = inst[5:0];
+    wire [25:0] j_addr   = inst[25:0];
+
+    localparam [3:0]
+        OP_ADD = 4'd0,
+        OP_SUB = 4'd1,
+        OP_MUL = 4'd2,
+        OP_AND = 4'd3,
+        OP_OR  = 4'd4;
+
+    localparam [5:0]
+        OPC_R_TYPE = GRUPO + 6'd10, // 21
+        OPC_JMP    = 6'd2,          // 2
+        OPC_LW     = GRUPO + 6'd32, // 43
+        OPC_SW     = GRUPO + 6'd33, // 44
+        OPC_BNE    = GRUPO + 6'd34, // 45
+        OPC_ADDI   = GRUPO + 6'd35, // 46
+        OPC_ORI    = GRUPO + 6'd36; // 47
+
+    localparam [5:0]
+        FNC_ADD = 6'd32,
+        FNC_SUB = 6'd34,
+        FNC_MUL = 6'd50,
+        FNC_AND = 6'd36,
+        FNC_OR  = 6'd37;
+
+    always @(*) begin
+        jmpAddress = j_addr;
+        jmpFlag    = 1'b0;
+        branchFlag = 1'b0;
+        alu_op     = OP_ADD;
+        alu_src_b  = 1'b0;
+        mult_start = 1'b0;
+        reg_write  = 1'b0;
+        mem_read   = 1'b0;
+        mem_write  = 1'b0;
+        mem_to_reg = 1'b0;
+
+        case (opcode)
+            OPC_R_TYPE: begin
+                reg_write  = 1'b1;
+                alu_src_b  = 1'b0;
+                mem_to_reg = 1'b0;
+
+                case (funct)
+                    FNC_ADD: alu_op = OP_ADD;
+                    FNC_SUB: alu_op = OP_SUB;
+                    FNC_MUL: begin
+                        alu_op     = OP_MUL;
+                        mult_start = 1'b1;
+                    end
+                    FNC_AND: alu_op = OP_AND;
+                    FNC_OR:  alu_op = OP_OR;
+                    default: begin
+                        alu_op    = OP_ADD;
+                        reg_write = 1'b0;
+                    end
+                endcase
+            end
+
+            OPC_LW: begin
+                alu_op     = OP_ADD;
+                alu_src_b  = 1'b1;
+                mem_read   = 1'b1;
+                reg_write  = 1'b1;
+                mem_to_reg = 1'b1;
+            end
+
+            OPC_SW: begin
+                alu_op     = OP_ADD; 
+                alu_src_b  = 1'b1;
+                mem_write  = 1'b1;
+                reg_write  = 1'b0;
+            end
+
+            OPC_ADDI: begin
+                alu_op     = OP_ADD;
+                alu_src_b  = 1'b1;
+                reg_write  = 1'b1;
+                mem_to_reg = 1'b0;
+            end
+
+            OPC_ORI: begin
+                alu_op     = OP_OR;  
+                alu_src_b  = 1'b1;
+                reg_write  = 1'b1;
+                mem_to_reg = 1'b0;
+            end
+
+            OPC_BNE: begin
+                reg_write  = 1'b0;
+                mem_write  = 1'b0;
+                mem_read   = 1'b0;
+                if (reg_data_a != reg_data_b) begin
+                    branchFlag = 1'b1;
+                end
+            end
+
+            OPC_JMP: begin
+                jmpFlag    = 1'b1;
+                jmpAddress = j_addr;
+                reg_write  = 1'b0;
+                mem_write  = 1'b0;
+                mem_read   = 1'b0;
+            end
+
+            default: begin
+            end
+        endcase
+    end
+
+endmodule

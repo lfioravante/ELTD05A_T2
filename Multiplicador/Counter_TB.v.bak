@@ -1,0 +1,44 @@
+`timescale 1ns / 1ps
+
+module Counter_TB;
+    reg load, sh, clk, rst;
+    wire k;
+
+    Counter dut (
+        .Load(load),
+        .Sh(sh),
+        .Clk(clk),
+        .rst(rst),
+        .K(k)
+    );
+
+    initial begin
+        clk = 1'b0;
+        forever #5 clk = ~clk;
+    end
+
+    initial begin
+        load = 1'b0; sh = 1'b0; rst = 1'b1;
+        
+        @(negedge clk);
+        @(negedge clk);
+        rst = 1'b0;
+
+        @(negedge clk);
+        load = 1'b1;
+        @(negedge clk);
+        load = 1'b0;
+
+        @(negedge clk);
+        sh = 1'b1;
+        repeat(4) @(negedge clk);
+        sh = 1'b0;
+
+        @(negedge clk);
+        $finish;
+    end
+
+    initial begin
+        $monitor("Tempo=%0t | rst=%b | Load=%b | Sh=%b | K=%b", $time, rst, load, sh, k);
+    end
+endmodule

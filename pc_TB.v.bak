@@ -1,0 +1,60 @@
+`timescale 1ns/1ps
+module pc_TB;
+	reg clk ;                
+	reg rst ;                
+	reg  [31:0] data_in ;    
+	wire [31:0] data_out ; 
+	reg  [31:0] RESET_ADDR;
+
+	pc #(32) DUT ( .clk(clk), .rst(rst), .data_in(data_in), .data_out(data_out) );
+
+	// clock de 50 MHz: período de 20 ns
+	initial clk = 0;
+	always #10 clk = ~clk;
+	assign RESET_ADDR = 32'h00001000;
+	initial begin
+		rst = 1;
+		data_in = 0;
+                   
+		#5;
+		if (data_out !== RESET_ADDR) 
+			$display("ERRO 1: out=%h", data_out);
+		else                       
+			$display("OK 1");		
+			
+		rst = 0;
+		#15;                                          
+		if (data_out !== RESET_ADDR) 
+			$display("ERRO 2: out=%h", data_out);
+		else                       
+			$display("OK 2");
+
+		data_in = data_out + 4;
+		#5;
+		$display("antes da borda: out=%h (ainda o valor antigo)", data_out);
+		#15;
+		if (data_out !== RESET_ADDR + 4) $display("ERRO 3: out=%h", data_out);
+		else                       
+			$display("OK 3");
+
+		data_in = 32'hAA00;
+		#5;
+		$display("antes da borda: out=%h (ainda o valor antigo)", data_out);
+		#15;
+		if (data_out !== data_in) $display("ERRO 3c: out=%h", data_out);
+		else                       
+			$display("OK 3c");
+
+		rst = 1;
+		#5;                                        
+		if (data_out !== 0) 
+			$display("ERRO 4: out=%h", data_out);
+		else                       
+			$display("OK 4 (reset assincrono)");
+		#15;                                        
+		rst = 0;
+
+		// 5) fim
+		$stop;
+	end
+endmodule

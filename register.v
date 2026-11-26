@@ -1,0 +1,13 @@
+module register #(parameter WIDTH = 32) (
+    input  clk,                 // clock
+    input  rst,                 // reset
+    input  [WIDTH-1:0] data_in,     // entrada
+    output reg [WIDTH-1:0] data_out  // saída
+);
+    always @(posedge clk or posedge rst ) begin
+        if ( rst )
+            data_out <= 0;
+        else
+            data_out <= data_in;
+    end
+endmodule

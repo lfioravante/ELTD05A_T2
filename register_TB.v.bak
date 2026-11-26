@@ -1,0 +1,22 @@
+`timescale 1ns/1ps
+module register_TB;
+    reg clk ;                
+    reg rst ;                
+    reg  [31:0] data_in ;    
+    wire [31:0] data_out ;         
+
+    register #(32) DUT ( .clk(clk), .rst(rst), .data_in(data_in), .data_out(data_out) );
+
+    // clock de 50 MHz: período de 20 ns
+    initial clk = 0;
+    always #10 clk = ~clk;
+
+    initial begin
+        // 1) começa com reset ativo e entrada zero
+        // 2) solta o reset longe da borda de subida
+        // 3) aplica 3 valores diferentes em data_in, esperando 1 ciclo entre eles
+        //    e conferindo com $display se data_out acompanhou (com 1 ciclo de atraso)
+        // 4) levanta o reset no MEIO de um ciclo e confere se data_out zera na hora
+        // 5) termina com $stop
+    end
+endmodule
