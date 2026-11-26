@@ -1,0 +1,7 @@
+
+State Machine - |risc|Multiplicador:u_Multiplicador|CONTROL:control|current_state
+Name current_state.S3_DONE current_state.S2_SHIFT current_state.S1_CHECK current_state.S0_IDLE 
+current_state.S0_IDLE 0 0 0 0 
+current_state.S1_CHECK 0 0 1 1 
+current_state.S2_SHIFT 0 1 0 1 
+current_state.S3_DONE 1 0 0 1 
