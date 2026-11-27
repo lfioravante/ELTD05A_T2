@@ -1,26 +1,23 @@
 module CONTROL (
-    input Clk, K, St, M, rst,
+    input      Clk, K, St, M, rst,
     output reg Idle, Done, Load, Sh, Ad
 );
-    // Parametrização para estado
-    localparam [1:0] 
-        S0_IDLE  = 2'b00,
-        S1_CHECK = 2'b01,
-        S2_SHIFT = 2'b10,
-        S3_DONE  = 2'b11;
+    // Codificacao One-Hot dos estados para menor atraso no dominio CLK_MUL
+    localparam [3:0]
+        S0_IDLE  = 4'b0001,
+        S1_CHECK = 4'b0010,
+        S2_SHIFT = 4'b0100,
+        S3_DONE  = 4'b1000;
 
-    reg [1:0] current_state, next_state;
+    reg [3:0] current_state, next_state;
 
-    // Bloco de sincronismo
     always @(posedge Clk or posedge rst) begin
-        if (rst) begin
+        if (rst)
             current_state <= S0_IDLE;
-        end else begin
+        else
             current_state <= next_state;
-        end
     end
 
-    // Bloco de decodificação lógica (Prevenção de latches indesejados)
     always @(*) begin
         Load       = 1'b0;
         Sh         = 1'b0;
@@ -39,29 +36,27 @@ module CONTROL (
             end
 
             S1_CHECK: begin
-                if (M) begin
+                if (M)
                     Ad = 1'b1;
-                end
                 next_state = S2_SHIFT;
             end
 
             S2_SHIFT: begin
                 Sh = 1'b1;
-                if (K) begin
+                if (K)
                     next_state = S3_DONE;
-                end else begin
+                else
                     next_state = S1_CHECK;
-                end
             end
 
             S3_DONE: begin
                 Done = 1'b1;
-                if (!St) begin
+                if (!St)
                     next_state = S0_IDLE;
-                end
             end
 
             default: next_state = S0_IDLE;
         endcase
     end
+
 endmodule
