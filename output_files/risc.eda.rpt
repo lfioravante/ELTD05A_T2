@@ -1,5 +1,5 @@
 EDA Netlist Writer report for risc
-Tue Nov 24 19:28:54 2026
+Thu Nov 26 20:58:59 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -36,9 +36,9 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Nov 24 19:28:54 2026 ;
+; EDA Netlist Writer Status ; Successful - Thu Nov 26 20:58:59 2026 ;
 ; Revision Name             ; risc                                  ;
-; Top-level Entity Name     ; Multiplicador                         ;
+; Top-level Entity Name     ; risc                                  ;
 ; Family                    ; Cyclone IV GX                         ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -66,20 +66,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+------------------------------------------------------------+
-; Simulation Generated Files                                 ;
-+------------------------------------------------------------+
-; Generated Files                                            ;
-+------------------------------------------------------------+
-; C:/works/simulation/modelsim/risc_7_1200mv_85c_slow.vo     ;
-; C:/works/simulation/modelsim/risc_7_1200mv_0c_slow.vo      ;
-; C:/works/simulation/modelsim/risc_min_1200mv_0c_fast.vo    ;
-; C:/works/simulation/modelsim/risc.vo                       ;
-; C:/works/simulation/modelsim/risc_7_1200mv_85c_v_slow.sdo  ;
-; C:/works/simulation/modelsim/risc_7_1200mv_0c_v_slow.sdo   ;
-; C:/works/simulation/modelsim/risc_min_1200mv_0c_v_fast.sdo ;
-; C:/works/simulation/modelsim/risc_v.sdo                    ;
-+------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                            ;
++-----------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                       ;
++-----------------------------------------------------------------------------------------------------------------------+
+; /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim/risc_7_1200mv_85c_slow.vo     ;
+; /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim/risc_7_1200mv_0c_slow.vo      ;
+; /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim/risc_min_1200mv_0c_fast.vo    ;
+; /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim/risc.vo                       ;
+; /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim/risc_7_1200mv_85c_v_slow.sdo  ;
+; /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim/risc_7_1200mv_0c_v_slow.sdo   ;
+; /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim/risc_min_1200mv_0c_v_fast.sdo ;
+; /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim/risc_v.sdo                    ;
++-----------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -88,21 +88,21 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Nov 24 19:28:53 2026
+    Info: Processing started: Thu Nov 26 20:58:53 2026
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off risc -c risc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file risc_7_1200mv_85c_slow.vo in folder "C:/works/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file risc_7_1200mv_0c_slow.vo in folder "C:/works/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file risc_min_1200mv_0c_fast.vo in folder "C:/works/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file risc.vo in folder "C:/works/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file risc_7_1200mv_85c_v_slow.sdo in folder "C:/works/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file risc_7_1200mv_0c_v_slow.sdo in folder "C:/works/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file risc_min_1200mv_0c_v_fast.sdo in folder "C:/works/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file risc_v.sdo in folder "C:/works/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file risc_7_1200mv_85c_slow.vo in folder "/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file risc_7_1200mv_0c_slow.vo in folder "/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file risc_min_1200mv_0c_fast.vo in folder "/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file risc.vo in folder "/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file risc_7_1200mv_85c_v_slow.sdo in folder "/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file risc_7_1200mv_0c_v_slow.sdo in folder "/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file risc_min_1200mv_0c_v_fast.sdo in folder "/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file risc_v.sdo in folder "/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4726 megabytes
-    Info: Processing ended: Tue Nov 24 19:28:54 2026
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 1135 megabytes
+    Info: Processing ended: Thu Nov 26 20:58:59 2026
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
 
 

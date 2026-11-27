@@ -118,21 +118,21 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AA12      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA13      :        :                   :         : 3         :                
 VCCINT                       : AA14      : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA15      :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA16      :        :                   :         : 3         :                
+ADDR_Prog[7]                 : AA16      : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA17      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA18      :        :                   :         : 4         :                
+ADDR_Prog[10]                : AA18      : output : 2.5 V             :         : 4         : N              
 GND                          : AA19      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA20      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA21      :        :                   :         : 4         :                
-Produto[7]                   : AA22      : output : 2.5 V             :         : 5         : N              
+ADDR_Prog[29]                : AA20      : output : 2.5 V             :         : 4         : N              
+Data_BUS_WRITE[13]           : AA21      : output : 2.5 V             :         : 4         : N              
+Data_BUS_WRITE[30]           : AA22      : output : 2.5 V             :         : 5         : N              
 VCCIO5                       : AA23      : power  :                   : 2.5V    : 5         :                
 VCCIO5                       : AA24      : power  :                   : 2.5V    : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA25      :        :                   :         : 5         :                
-Produto[14]                  : AA26      : output : 2.5 V             :         : 5         : N              
-Produto[31]                  : AA27      : output : 2.5 V             :         : 5         : N              
-Multiplicador[3]             : AA28      : input  : 2.5 V             :         : 5         : N              
-Multiplicador[1]             : AA29      : input  : 2.5 V             :         : 5         : N              
-Multiplicador[11]            : AA30      : input  : 2.5 V             :         : 5         : N              
+Data_BUS_WRITE[10]           : AA25      : output : 2.5 V             :         : 5         : N              
+Data_BUS_WRITE[25]           : AA26      : output : 2.5 V             :         : 5         : N              
+Data_BUS_WRITE[20]           : AA27      : output : 2.5 V             :         : 5         : N              
+Data_BUS_READ[6]             : AA28      : input  : 2.5 V             :         : 5         : N              
+ADDR[4]                      : AA29      : output : 2.5 V             :         : 5         : N              
+Data_BUS_READ[18]            : AA30      : input  : 2.5 V             :         : 5         : N              
 GND                          : AB1       : gnd    :                   :         :           :                
 GND                          : AB2       : gnd    :                   :         :           :                
 GXB_NC                       : AB3       :        :                   :         : QL0       :                
@@ -149,20 +149,20 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AB13      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB14      :        :                   :         : 3         :                
 VCCIO3                       : AB15      : power  :                   : 2.5V    : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB16      :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB17      :        :                   :         : 4         :                
+Prog_BUS_READ[22]            : AB17      : input  : 2.5 V             :         : 4         : N              
 VCCIO4                       : AB18      : power  :                   : 2.5V    : 4         :                
 VCCIO4                       : AB19      : power  :                   : 2.5V    : 4         :                
 VCCIO4                       : AB20      : power  :                   : 2.5V    : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB21      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB22      :        :                   :         : 4         :                
+Prog_BUS_READ[13]            : AB21      : input  : 2.5 V             :         : 4         : N              
+Data_BUS_WRITE[1]            : AB22      : output : 2.5 V             :         : 4         : N              
 VCCD_PLL                     : AB23      : power  :                   : 1.2V    :           :                
 VCCA                         : AB24      : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB25      :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB26      :        :                   :         : 5         :                
-Multiplicador[10]            : AB27      : input  : 2.5 V             :         : 5         : N              
-Multiplicador[7]             : AB28      : input  : 2.5 V             :         : 5         : N              
-Produto[1]                   : AB29      : output : 2.5 V             :         : 5         : N              
-Multiplicador[15]            : AB30      : input  : 2.5 V             :         : 5         : N              
+ADDR[30]                     : AB25      : output : 2.5 V             :         : 5         : N              
+Data_BUS_WRITE[18]           : AB26      : output : 2.5 V             :         : 5         : N              
+ADDR[12]                     : AB27      : output : 2.5 V             :         : 5         : N              
+ADDR[23]                     : AB28      : output : 2.5 V             :         : 5         : N              
+WE                           : AB29      : output : 2.5 V             :         : 5         : N              
+ADDR[9]                      : AB30      : output : 2.5 V             :         : 5         : N              
 GXB_GND*                     : AC1       :        :                   :         : QL0       :                
 GXB_GND*                     : AC2       :        :                   :         : QL0       :                
 GND                          : AC3       : gnd    :                   :         :           :                
@@ -187,18 +187,18 @@ VCCIO4                       : AC21      : power  :                   : 2.5V    
 VCCIO4                       : AC22      : power  :                   : 2.5V    : 4         :                
 GND                          : AC23      : gnd    :                   :         :           :                
 GND                          : AC24      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC25      :        :                   :         : 5         :                
+Data_BUS_WRITE[4]            : AC25      : output : 2.5 V             :         : 5         : N              
 GND                          : AC26      : gnd    :                   :         :           :                
-Multiplicador[5]             : AC27      : input  : 2.5 V             :         : 5         : N              
-Multiplicador[6]             : AC28      : input  : 2.5 V             :         : 5         : N              
+Data_BUS_READ[23]            : AC27      : input  : 2.5 V             :         : 5         : N              
+Data_BUS_WRITE[2]            : AC28      : output : 2.5 V             :         : 5         : N              
 GND                          : AC29      : gnd    :                   :         :           :                
-Multiplicador[4]             : AC30      : input  : 2.5 V             :         : 5         : N              
+Data_BUS_READ[16]            : AC30      : input  : 2.5 V             :         : 5         : N              
 GND                          : AD1       : gnd    :                   :         :           :                
 GND                          : AD2       : gnd    :                   :         :           :                
 VCCA_GXB                     : AD3       : power  :                   : 2.5V    :           :                
 VCCL_GXB                     : AD4       : power  :                   : 1.2V    :           :                
 GND                          : AD5       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD6       :        :                   :         : 3         :                
+RST                          : AD6       : input  : 2.5 V             :         : 3         : N              
 MSEL0                        : AD7       :        :                   :         : 3         :                
 MSEL1                        : AD8       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD9       :        :                   :         : 3         :                
@@ -208,21 +208,21 @@ VCCIO3                       : AD12      : power  :                   : 2.5V    
 VCCIO3                       : AD13      : power  :                   : 2.5V    : 3         :                
 VCCIO3                       : AD14      : power  :                   : 2.5V    : 3         :                
 VCCIO3                       : AD15      : power  :                   : 2.5V    : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD16      :        :                   :         : 4         :                
+Prog_BUS_READ[14]            : AD16      : input  : 2.5 V             :         : 4         : N              
 VCCIO4                       : AD17      : power  :                   : 2.5V    : 4         :                
 VCCIO4                       : AD18      : power  :                   : 2.5V    : 4         :                
 VCCIO4                       : AD19      : power  :                   : 2.5V    : 4         :                
 VCCIO4                       : AD20      : power  :                   : 2.5V    : 4         :                
 VCCIO4                       : AD21      : power  :                   : 2.5V    : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD22      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD23      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD24      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD25      :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD26      :        :                   :         : 5         :                
-Multiplicando[10]            : AD27      : input  : 2.5 V             :         : 5         : N              
-Produto[28]                  : AD28      : output : 2.5 V             :         : 5         : N              
-Multiplicando[13]            : AD29      : input  : 2.5 V             :         : 5         : N              
-Done                         : AD30      : output : 2.5 V             :         : 5         : N              
+ADDR_Prog[4]                 : AD22      : output : 2.5 V             :         : 4         : N              
+CS_P                         : AD23      : output : 2.5 V             :         : 4         : N              
+ADDR[21]                     : AD24      : output : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[8]             : AD25      : input  : 2.5 V             :         : 5         : N              
+ADDR[14]                     : AD26      : output : 2.5 V             :         : 5         : N              
+ADDR[2]                      : AD27      : output : 2.5 V             :         : 5         : N              
+Data_BUS_READ[4]             : AD28      : input  : 2.5 V             :         : 5         : N              
+Data_BUS_WRITE[14]           : AD29      : output : 2.5 V             :         : 5         : N              
+Data_BUS_READ[11]            : AD30      : input  : 2.5 V             :         : 5         : N              
 RREF                         : AE1       :        :                   :         :           :                
 GND                          : AE2       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE3       :        :                   :         : 3         :                
@@ -239,20 +239,20 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AE13      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE14      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE15      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE16      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE17      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE18      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE19      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE20      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE21      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE22      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE23      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE24      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE25      :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE26      :        :                   :         : 5         :                
-Produto[13]                  : AE27      : output : 2.5 V             :         : 5         : N              
-Produto[10]                  : AE28      : output : 2.5 V             :         : 5         : N              
-Produto[8]                   : AE29      : output : 2.5 V             :         : 5         : N              
-Produto[3]                   : AE30      : output : 2.5 V             :         : 5         : N              
+ADDR_Prog[16]                : AE17      : output : 2.5 V             :         : 4         : N              
+ADDR_Prog[31]                : AE18      : output : 2.5 V             :         : 4         : N              
+ADDR_Prog[27]                : AE19      : output : 2.5 V             :         : 4         : N              
+ADDR_Prog[2]                 : AE20      : output : 2.5 V             :         : 4         : N              
+ADDR_Prog[21]                : AE21      : output : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[24]            : AE22      : input  : 2.5 V             :         : 4         : N              
+Data_BUS_WRITE[3]            : AE23      : output : 2.5 V             :         : 4         : N              
+Data_BUS_WRITE[15]           : AE24      : output : 2.5 V             :         : 4         : N              
+Data_BUS_WRITE[6]            : AE25      : output : 2.5 V             :         : 5         : N              
+Data_BUS_WRITE[16]           : AE26      : output : 2.5 V             :         : 5         : N              
+Data_BUS_WRITE[23]           : AE27      : output : 2.5 V             :         : 5         : N              
+Data_BUS_WRITE[17]           : AE28      : output : 2.5 V             :         : 5         : N              
+ADDR[0]                      : AE29      : output : 2.5 V             :         : 5         : N              
+Data_BUS_WRITE[9]            : AE30      : output : 2.5 V             :         : 5         : N              
 GND                          : AF1       : gnd    :                   :         :           :                
 GND                          : AF2       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF3       :        :                   :         : 3         :                
@@ -268,21 +268,21 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AF12      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF13      :        :                   :         : 3         :                
 GND                          : AF14      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF15      :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF16      :        :                   :         : 4         :                
+ADDR_Prog[30]                : AF16      : output : 2.5 V             :         : 4         : N              
 GND                          : AF17      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF18      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF19      :        :                   :         : 4         :                
+ADDR_Prog[14]                : AF18      : output : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[30]            : AF19      : input  : 2.5 V             :         : 4         : N              
 GND                          : AF20      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF21      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF22      :        :                   :         : 4         :                
+ADDR_Prog[26]                : AF21      : output : 2.5 V             :         : 4         : N              
+ADDR_Prog[11]                : AF22      : output : 2.5 V             :         : 4         : N              
 GND                          : AF23      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF24      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF25      :        :                   :         : 4         :                
+Data_BUS_WRITE[31]           : AF24      : output : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[26]            : AF25      : input  : 2.5 V             :         : 4         : N              
 GND                          : AF26      : gnd    :                   :         :           :                
-Produto[18]                  : AF27      : output : 2.5 V             :         : 5         : N              
-Produto[9]                   : AF28      : output : 2.5 V             :         : 5         : N              
+Data_BUS_WRITE[19]           : AF27      : output : 2.5 V             :         : 5         : N              
+Data_BUS_READ[13]            : AF28      : input  : 2.5 V             :         : 5         : N              
 GND                          : AF29      : gnd    :                   :         :           :                
-Produto[11]                  : AF30      : output : 2.5 V             :         : 5         : N              
+Data_BUS_READ[19]            : AF30      : input  : 2.5 V             :         : 5         : N              
 NC                           : AG1       :        :                   :         :           :                
 GND                          : AG2       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG3       :        :                   :         : 3         :                
@@ -299,20 +299,20 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AG13      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG14      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG15      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG16      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG17      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG18      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG19      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG20      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG21      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG22      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG23      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG24      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG25      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG26      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG27      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG28      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG29      :        :                   :         : 5         :                
-Produto[25]                  : AG30      : output : 2.5 V             :         : 5         : N              
+Prog_BUS_READ[12]            : AG17      : input  : 2.5 V             :         : 4         : N              
+ADDR_Prog[5]                 : AG18      : output : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[19]            : AG19      : input  : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[10]            : AG20      : input  : 2.5 V             :         : 4         : N              
+ADDR_Prog[13]                : AG21      : output : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[29]            : AG22      : input  : 2.5 V             :         : 4         : N              
+ADDR_Prog[24]                : AG23      : output : 2.5 V             :         : 4         : N              
+Data_BUS_WRITE[21]           : AG24      : output : 2.5 V             :         : 4         : N              
+ADDR[29]                     : AG25      : output : 2.5 V             :         : 4         : N              
+ADDR_Prog[28]                : AG26      : output : 2.5 V             :         : 4         : N              
+Data_BUS_READ[30]            : AG27      : input  : 2.5 V             :         : 4         : N              
+Data_BUS_READ[28]            : AG28      : input  : 2.5 V             :         : 4         : N              
+Data_BUS_WRITE[7]            : AG29      : output : 2.5 V             :         : 5         : N              
+ADDR[27]                     : AG30      : output : 2.5 V             :         : 5         : N              
 NC                           : AH1       :        :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH2       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH3       :        :                   :         : 3         :                
@@ -329,20 +329,20 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AH13      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH14      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH15      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH16      :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH17      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH18      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH19      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH20      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH21      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH22      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH23      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH24      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH25      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH26      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH27      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH28      :        :                   :         : 4         :                
-Produto[5]                   : AH29      : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH30      :        :                   :         : 5         :                
+Prog_BUS_READ[6]             : AH17      : input  : 2.5 V             :         : 4         : N              
+Data_BUS_WRITE[26]           : AH18      : output : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[31]            : AH19      : input  : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[25]            : AH20      : input  : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[23]            : AH21      : input  : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[15]            : AH22      : input  : 2.5 V             :         : 4         : N              
+ADDR_Prog[3]                 : AH23      : output : 2.5 V             :         : 4         : N              
+ADDR_Prog[18]                : AH24      : output : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[11]            : AH25      : input  : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[5]             : AH26      : input  : 2.5 V             :         : 4         : N              
+Data_BUS_READ[31]            : AH27      : input  : 2.5 V             :         : 4         : N              
+Data_BUS_READ[17]            : AH28      : input  : 2.5 V             :         : 4         : N              
+Data_BUS_READ[2]             : AH29      : input  : 2.5 V             :         : 5         : N              
+ADDR_Prog[1]                 : AH30      : output : 2.5 V             :         : 5         : N              
 nSTATUS                      : AJ1       :        :                   :         : 3         :                
 GND                          : AJ2       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ3       :        :                   :         : 3         :                
@@ -357,29 +357,29 @@ GND                          : AJ11      : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ12      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ13      :        :                   :         : 3         :                
 GND                          : AJ14      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ15      :        :                   :         : 4         :                
+Prog_BUS_READ[21]            : AJ15      : input  : 2.5 V             :         : 4         : N              
 GND+                         : AJ16      :        :                   :         : 4         :                
 GND                          : AJ17      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ18      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ19      :        :                   :         : 4         :                
+Prog_BUS_READ[7]             : AJ18      : input  : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[16]            : AJ19      : input  : 2.5 V             :         : 4         : N              
 GND                          : AJ20      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ21      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ22      :        :                   :         : 4         :                
+ADDR_Prog[23]                : AJ21      : output : 2.5 V             :         : 4         : N              
+ADDR_Prog[6]                 : AJ22      : output : 2.5 V             :         : 4         : N              
 GND                          : AJ23      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ24      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ25      :        :                   :         : 4         :                
+ADDR_Prog[8]                 : AJ24      : output : 2.5 V             :         : 4         : N              
+ADDR_Prog[17]                : AJ25      : output : 2.5 V             :         : 4         : N              
 GND                          : AJ26      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ27      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ28      :        :                   :         : 4         :                
+Prog_BUS_READ[0]             : AJ27      : input  : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[2]             : AJ28      : input  : 2.5 V             :         : 4         : N              
 GND                          : AJ29      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ30      :        :                   :         : 5         :                
+Data_BUS_READ[27]            : AJ30      : input  : 2.5 V             :         : 5         : N              
 NC                           : AK2       :        :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK3       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK4       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK5       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK6       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK7       :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK8       :        :                   :         : 3         :                
+Prog_BUS_READ[18]            : AK8       : input  : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK9       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK10      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK11      :        :                   :         : 3         :                
@@ -390,17 +390,17 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AK15      :        :                   :      
 GND+                         : AK16      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK17      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK18      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK19      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK20      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK21      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK22      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK23      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK24      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK25      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK26      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK27      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK28      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK29      :        :                   :         : 4         :                
+ADDR_Prog[19]                : AK19      : output : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[1]             : AK20      : input  : 2.5 V             :         : 4         : N              
+ADDR_Prog[15]                : AK21      : output : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[28]            : AK22      : input  : 2.5 V             :         : 4         : N              
+ADDR_Prog[0]                 : AK23      : output : 2.5 V             :         : 4         : N              
+ADDR_Prog[22]                : AK24      : output : 2.5 V             :         : 4         : N              
+ADDR_Prog[9]                 : AK25      : output : 2.5 V             :         : 4         : N              
+ADDR_Prog[20]                : AK26      : output : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[20]            : AK27      : input  : 2.5 V             :         : 4         : N              
+ADDR_Prog[25]                : AK28      : output : 2.5 V             :         : 4         : N              
+Prog_BUS_READ[27]            : AK29      : input  : 2.5 V             :         : 4         : N              
 nCONFIG                      : B1        :        :                   :         : 9         :                
 GND                          : B2        : gnd    :                   :         :           :                
 ~ALTERA_DCLK~                : B3        : output : 2.5 V             :         : 9         : N              
@@ -425,7 +425,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : B21       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : B22       :        :                   :         : 7         :                
 GND                          : B23       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B24       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B25       :        :                   :         : 7         :                
+Prog_BUS_READ[17]            : B25       : input  : 2.5 V             :         : 7         : N              
 GND                          : B26       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B27       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B28       :        :                   :         : 7         :                
@@ -668,7 +668,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : K24       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : K25       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K26       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K27       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K28       :        :                   :         : 6         :                
+ADDR[11]                     : K28       : output : 2.5 V             :         : 6         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : K29       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K30       :        :                   :         : 6         :                
 GXB_GND*                     : L1        :        :                   :         : QL1       :                
@@ -721,16 +721,16 @@ VCCINT                       : M17       : power  :                   : 1.2V    
 GND                          : M18       : gnd    :                   :         :           :                
 VCCINT                       : M19       : power  :                   : 1.2V    :           :                
 GND                          : M20       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M21       :        :                   :         : 6         :                
+Prog_BUS_READ[9]             : M21       : input  : 2.5 V             :         : 6         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : M22       :        :                   :         : 6         :                
 VCCIO6                       : M23       : power  :                   : 2.5V    : 6         :                
 VCCIO6                       : M24       : power  :                   : 2.5V    : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M25       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M26       :        :                   :         : 6         :                
+Data_BUS_READ[20]            : M26       : input  : 2.5 V             :         : 6         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : M27       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M28       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M29       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M30       :        :                   :         : 6         :                
+ADDR[28]                     : M29       : output : 2.5 V             :         : 6         : N              
+Data_BUS_READ[8]             : M30       : input  : 2.5 V             :         : 6         : N              
 GXB_GND*                     : N1        :        :                   :         : QL1       :                
 GXB_GND*                     : N2        :        :                   :         : QL1       :                
 GND                          : N3        : gnd    :                   :         :           :                
@@ -751,16 +751,16 @@ GND                          : N17       : gnd    :                   :         
 VCCINT                       : N18       : power  :                   : 1.2V    :           :                
 GND                          : N19       : gnd    :                   :         :           :                
 VCCINT                       : N20       : power  :                   : 1.2V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N21       :        :                   :         : 6         :                
+Data_BUS_READ[29]            : N21       : input  : 2.5 V             :         : 6         : N              
 VCCIO6                       : N22       : power  :                   : 2.5V    : 6         :                
 VCCIO6                       : N23       : power  :                   : 2.5V    : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N24       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N25       :        :                   :         : 6         :                
-Multiplicando[9]             : N26       : input  : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : N27       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N28       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N29       :        :                   :         : 6         :                
-Multiplicando[12]            : N30       : input  : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N26       :        :                   :         : 6         :                
+ADDR[8]                      : N27       : output : 2.5 V             :         : 6         : N              
+Data_BUS_READ[1]             : N28       : input  : 2.5 V             :         : 6         : N              
+Data_BUS_WRITE[11]           : N29       : output : 2.5 V             :         : 6         : N              
+Data_BUS_WRITE[8]            : N30       : output : 2.5 V             :         : 6         : N              
 GND                          : P1        : gnd    :                   :         :           :                
 GND                          : P2        : gnd    :                   :         :           :                
 GXB_NC                       : P3        :        :                   :         : QL1       :                
@@ -781,16 +781,16 @@ VCCINT                       : P17       : power  :                   : 1.2V    
 GND                          : P18       : gnd    :                   :         :           :                
 VCCINT                       : P19       : power  :                   : 1.2V    :           :                
 GND                          : P20       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P21       :        :                   :         : 6         :                
+Data_BUS_READ[10]            : P21       : input  : 2.5 V             :         : 6         : N              
 VCCIO6                       : P22       : power  :                   : 2.5V    : 6         :                
 GND                          : P23       : gnd    :                   :         :           :                
 VCCIO6                       : P24       : power  :                   : 2.5V    : 6         :                
-Produto[22]                  : P25       : output : 2.5 V             :         : 6         : N              
+ADDR[5]                      : P25       : output : 2.5 V             :         : 6         : N              
 GND                          : P26       : gnd    :                   :         :           :                
-Multiplicando[0]             : P27       : input  : 2.5 V             :         : 6         : N              
-Produto[15]                  : P28       : output : 2.5 V             :         : 6         : N              
+Data_BUS_READ[0]             : P27       : input  : 2.5 V             :         : 6         : N              
+Data_BUS_WRITE[0]            : P28       : output : 2.5 V             :         : 6         : N              
 GND                          : P29       : gnd    :                   :         :           :                
-Produto[19]                  : P30       : output : 2.5 V             :         : 6         : N              
+ADDR[10]                     : P30       : output : 2.5 V             :         : 6         : N              
 GXB_GND*                     : R1        :        :                   :         : QL1       :                
 GXB_GND*                     : R2        :        :                   :         : QL1       :                
 GND                          : R3        : gnd    :                   :         :           :                
@@ -814,13 +814,13 @@ VCCINT                       : R20       : power  :                   : 1.2V    
 GND                          : R21       : gnd    :                   :         :           :                
 VCCIO6                       : R22       : power  :                   : 2.5V    : 6         :                
 VCCIO6                       : R23       : power  :                   : 2.5V    : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R24       :        :                   :         : 6         :                
-Multiplicando[2]             : R25       : input  : 2.5 V             :         : 6         : N              
-Multiplicando[4]             : R26       : input  : 2.5 V             :         : 6         : N              
-Produto[21]                  : R27       : output : 2.5 V             :         : 6         : N              
-Produto[23]                  : R28       : output : 2.5 V             :         : 6         : N              
-Multiplicando[1]             : R29       : input  : 2.5 V             :         : 6         : N              
-Produto[20]                  : R30       : output : 2.5 V             :         : 6         : N              
+Data_BUS_WRITE[27]           : R24       : output : 2.5 V             :         : 6         : N              
+Data_BUS_READ[24]            : R25       : input  : 2.5 V             :         : 6         : N              
+Data_BUS_WRITE[22]           : R26       : output : 2.5 V             :         : 6         : N              
+Data_BUS_WRITE[12]           : R27       : output : 2.5 V             :         : 6         : N              
+ADDR[24]                     : R28       : output : 2.5 V             :         : 6         : N              
+ADDR[18]                     : R29       : output : 2.5 V             :         : 6         : N              
+Data_BUS_READ[12]            : R30       : input  : 2.5 V             :         : 6         : N              
 GND                          : T1        : gnd    :                   :         :           :                
 GND                          : T2        : gnd    :                   :         :           :                
 GXB_NC                       : T3        :        :                   :         : QL0       :                
@@ -841,16 +841,16 @@ VCCINT                       : T17       : power  :                   : 1.2V    
 GND                          : T18       : gnd    :                   :         :           :                
 VCCINT                       : T19       : power  :                   : 1.2V    :           :                
 GND                          : T20       : gnd    :                   :         :           :                
-Multiplicador[12]            : T21       : input  : 2.5 V             :         : 5         : N              
+Data_BUS_READ[5]             : T21       : input  : 2.5 V             :         : 5         : N              
 GND                          : T22       : gnd    :                   :         :           :                
-Produto[4]                   : T23       : output : 2.5 V             :         : 5         : N              
-Produto[12]                  : T24       : output : 2.5 V             :         : 5         : N              
-Produto[16]                  : T25       : output : 2.5 V             :         : 5         : N              
-Multiplicando[14]            : T26       : input  : 2.5 V             :         : 5         : N              
-Produto[6]                   : T27       : output : 2.5 V             :         : 5         : N              
-Multiplicando[15]            : T28       : input  : 2.5 V             :         : 6         : N              
-St                           : T29       : input  : 2.5 V             :         : 6         : N              
-Multiplicador[0]             : T30       : input  : 2.5 V             :         : 6         : N              
+ADDR[20]                     : T23       : output : 2.5 V             :         : 5         : N              
+Data_BUS_READ[7]             : T24       : input  : 2.5 V             :         : 5         : N              
+Data_BUS_READ[14]            : T25       : input  : 2.5 V             :         : 5         : N              
+ADDR[19]                     : T26       : output : 2.5 V             :         : 5         : N              
+ADDR[22]                     : T27       : output : 2.5 V             :         : 5         : N              
+ADDR[3]                      : T28       : output : 2.5 V             :         : 6         : N              
+GND+                         : T29       :        :                   :         : 6         :                
+GND+                         : T30       :        :                   :         : 6         :                
 GXB_GND*                     : U1        :        :                   :         : QL0       :                
 GXB_GND*                     : U2        :        :                   :         : QL0       :                
 GND                          : U3        : gnd    :                   :         :           :                
@@ -871,16 +871,16 @@ GND                          : U17       : gnd    :                   :         
 VCCINT                       : U18       : power  :                   : 1.2V    :           :                
 GND                          : U19       : gnd    :                   :         :           :                
 VCCINT                       : U20       : power  :                   : 1.2V    :           :                
-Multiplicando[11]            : U21       : input  : 2.5 V             :         : 5         : N              
+Data_BUS_READ[25]            : U21       : input  : 2.5 V             :         : 5         : N              
 VCCIO5                       : U22       : power  :                   : 2.5V    : 5         :                
 GND                          : U23       : gnd    :                   :         :           :                
 VCCIO5                       : U24       : power  :                   : 2.5V    : 5         :                
-Idle                         : U25       : output : 2.5 V             :         : 5         : N              
+ADDR[26]                     : U25       : output : 2.5 V             :         : 5         : N              
 GND                          : U26       : gnd    :                   :         :           :                
-Multiplicando[5]             : U27       : input  : 2.5 V             :         : 5         : N              
-Produto[0]                   : U28       : output : 2.5 V             :         : 5         : N              
+ADDR[25]                     : U27       : output : 2.5 V             :         : 5         : N              
+Data_BUS_READ[9]             : U28       : input  : 2.5 V             :         : 5         : N              
 GND                          : U29       : gnd    :                   :         :           :                
-Multiplicando[7]             : U30       : input  : 2.5 V             :         : 5         : N              
+Data_BUS_READ[26]            : U30       : input  : 2.5 V             :         : 5         : N              
 GND                          : V1        : gnd    :                   :         :           :                
 GND                          : V2        : gnd    :                   :         :           :                
 GXB_NC                       : V3        :        :                   :         : QL0       :                
@@ -892,23 +892,23 @@ GND                          : V8        : gnd    :                   :         
 VCCINT                       : V9        : power  :                   : 1.2V    :           :                
 GND                          : V10       : gnd    :                   :         :           :                
 GXB_GND*                     : V11       :        :                   :         : 3B        :                
-GXB_GND*                     : V12       :        :                   :         : 3B        :                
+CLK                          : V12       : input  : 2.5 V             :         : 3B        : N              
 VCCINT                       : V13       : power  :                   : 1.2V    :           :                
 GND                          : V14       : gnd    :                   :         :           :                
-rst                          : V15       : input  : 2.5 V             :         : 3A        : N              
+GXB_GND*                     : V15       :        :                   :         : 3A        :                
 GND                          : V16       : gnd    :                   :         :           :                
 VCCINT                       : V17       : power  :                   : 1.2V    :           :                
 GND                          : V18       : gnd    :                   :         :           :                
 VCCINT                       : V19       : power  :                   : 1.2V    :           :                
 GND                          : V20       : gnd    :                   :         :           :                
-Multiplicador[8]             : V21       : input  : 2.5 V             :         : 5         : N              
+Data_BUS_READ[22]            : V21       : input  : 2.5 V             :         : 5         : N              
 VCCIO5                       : V22       : power  :                   : 2.5V    : 5         :                
 VCCIO5                       : V23       : power  :                   : 2.5V    : 5         :                
 GND                          : V24       : gnd    :                   :         :           :                
-Produto[27]                  : V25       : output : 2.5 V             :         : 5         : N              
-Multiplicando[8]             : V26       : input  : 2.5 V             :         : 5         : N              
-Produto[29]                  : V27       : output : 2.5 V             :         : 5         : N              
-Produto[30]                  : V28       : output : 2.5 V             :         : 5         : N              
+Data_BUS_READ[3]             : V25       : input  : 2.5 V             :         : 5         : N              
+ADDR[6]                      : V26       : output : 2.5 V             :         : 5         : N              
+ADDR[7]                      : V27       : output : 2.5 V             :         : 5         : N              
+CS                           : V28       : output : 2.5 V             :         : 5         : N              
 GND+                         : V29       :        :                   :         : 5         :                
 GND+                         : V30       :        :                   :         : 5         :                
 GXB_GND*                     : W1        :        :                   :         : QL0       :                
@@ -925,7 +925,7 @@ GXB_GND*                     : W11       :        :                   :         
 GXB_GND*                     : W12       :        :                   :         : 3B        :                
 GND                          : W13       : gnd    :                   :         :           :                
 VCCINT                       : W14       : power  :                   : 1.2V    :           :                
-Clk                          : W15       : input  : 2.5 V             :         : 3A        : N              
+GXB_GND*                     : W15       :        :                   :         : 3A        :                
 VCC_CLKIN3A                  : W16       : power  :                   : 2.5V    : 3A        :                
 GND                          : W17       : gnd    :                   :         :           :                
 VCCINT                       : W18       : power  :                   : 1.2V    :           :                
@@ -935,12 +935,12 @@ GND                          : W21       : gnd    :                   :         
 VCCIO5                       : W22       : power  :                   : 2.5V    : 5         :                
 VCCIO5                       : W23       : power  :                   : 2.5V    : 5         :                
 VCCIO5                       : W24       : power  :                   : 2.5V    : 5         :                
-Multiplicador[14]            : W25       : input  : 2.5 V             :         : 5         : N              
-Multiplicador[13]            : W26       : input  : 2.5 V             :         : 5         : N              
-Multiplicando[3]             : W27       : input  : 2.5 V             :         : 5         : N              
-Multiplicador[9]             : W28       : input  : 2.5 V             :         : 5         : N              
-Produto[24]                  : W29       : output : 2.5 V             :         : 5         : N              
-Multiplicando[6]             : W30       : input  : 2.5 V             :         : 5         : N              
+ADDR[13]                     : W25       : output : 2.5 V             :         : 5         : N              
+Data_BUS_WRITE[28]           : W26       : output : 2.5 V             :         : 5         : N              
+ADDR[1]                      : W27       : output : 2.5 V             :         : 5         : N              
+Data_BUS_WRITE[24]           : W28       : output : 2.5 V             :         : 5         : N              
+ADDR[31]                     : W29       : output : 2.5 V             :         : 5         : N              
+ADDR[16]                     : W30       : output : 2.5 V             :         : 5         : N              
 GND                          : Y1        : gnd    :                   :         :           :                
 GND                          : Y2        : gnd    :                   :         :           :                
 GXB_NC                       : Y3        :        :                   :         : QL0       :                
@@ -958,16 +958,16 @@ GND                          : Y14       : gnd    :                   :         
 VCCINT                       : Y15       : power  :                   : 1.2V    :           :                
 GND                          : Y16       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y17       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y18       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y19       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y20       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y21       :        :                   :         : 4         :                
-Produto[17]                  : Y22       : output : 2.5 V             :         : 5         : N              
+Prog_BUS_READ[3]             : Y18       : input  : 2.5 V             :         : 4         : N              
+ADDR_Prog[12]                : Y19       : output : 2.5 V             :         : 4         : N              
+ADDR[15]                     : Y20       : output : 2.5 V             :         : 4         : N              
+Data_BUS_WRITE[5]            : Y21       : output : 2.5 V             :         : 4         : N              
+Data_BUS_READ[15]            : Y22       : input  : 2.5 V             :         : 5         : N              
 GND                          : Y23       : gnd    :                   :         :           :                
 VCCIO5                       : Y24       : power  :                   : 2.5V    : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y25       :        :                   :         : 5         :                
+Data_BUS_WRITE[29]           : Y25       : output : 2.5 V             :         : 5         : N              
 GND                          : Y26       : gnd    :                   :         :           :                
-Produto[2]                   : Y27       : output : 2.5 V             :         : 5         : N              
-Multiplicador[2]             : Y28       : input  : 2.5 V             :         : 5         : N              
+Prog_BUS_READ[4]             : Y27       : input  : 2.5 V             :         : 5         : N              
+Data_BUS_READ[21]            : Y28       : input  : 2.5 V             :         : 5         : N              
 GND                          : Y29       : gnd    :                   :         :           :                
-Produto[26]                  : Y30       : output : 2.5 V             :         : 5         : N              
+ADDR[17]                     : Y30       : output : 2.5 V             :         : 5         : N              
