@@ -11,29 +11,29 @@
 # 
 # vlog -vlog01compat -work work +incdir+. {risc_7_1200mv_85c_slow.vo}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:25:04 on Nov 27,2026
+# Start time: 01:08:10 on Nov 27,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+." risc_7_1200mv_85c_slow.vo 
 # -- Compiling module risc
 # 
 # Top level modules:
 # 	risc
-# End time: 00:25:05 on Nov 27,2026, Elapsed time: 0:00:01
+# End time: 01:08:11 on Nov 27,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2 {/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc_TB.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:25:05 on Nov 27,2026
+# Start time: 01:08:11 on Nov 27,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2" /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc_TB.v 
 # -- Compiling module risc_TB
 # 
 # Top level modules:
 # 	risc_TB
-# End time: 00:25:05 on Nov 27,2026, Elapsed time: 0:00:00
+# End time: 01:08:11 on Nov 27,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps +transport_int_delays +transport_path_delays -L altera_mf_ver -L altera_ver -L lpm_ver -L sgate_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L gate_work -L work -voptargs="+acc"  risc_TB
 # vsim -t 1ps "+transport_int_delays" "+transport_path_delays" -L altera_mf_ver -L altera_ver -L lpm_ver -L sgate_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L gate_work -L work -voptargs=""+acc"" risc_TB 
-# Start time: 00:25:05 on Nov 27,2026
+# Start time: 01:08:11 on Nov 27,2026
 # Loading work.risc_TB
 # Loading work.risc
 # Loading cycloneiv_ver.cycloneiv_io_obuf
@@ -87,8 +87,25 @@
 # 
 #  Note : cycloneiv PLL locked to incoming clock
 # Time: 192.88 ns  Instance: risc_TB.dut.\u_PLL|altpll_component|auto_generated|pll1 
-# [SW] t=7095.00 ns | PC=0x0000009c | ADDR=0x00001096 | Dado=0x00000000 (0) | CS=0
-# [SW] t=18995.00 ns | PC=0x000001ac | ADDR=0x00001096 | Dado=0x00000000 (0) | CS=0
-# [SW] t=27155.00 ns | PC=0x0000009c | ADDR=0x00001096 | Dado=0x00000000 (0) | CS=0
-# [SW] t=39055.00 ns | PC=0x000001ac | ADDR=0x00001096 | Dado=0x00000000 (0) | CS=0
-# [SW] t=47215.00 ns | PC=0x0000009c | ADDR=0x00001096 | Dado=0x00000000 (0) | CS=0
+# [SW] t=34815.00 ns | PC=0x00000030 | ADDR=0x00001096 | Dado=0x000001d1 (465) | CS=1
+# [SW] t=90395.00 ns | PC=0x00000074 | ADDR=0x00001096 | Dado=0x0001e610 (124432) | CS=0
+# [SW] t=125075.00 ns | PC=0x00000020 | ADDR=0x00001096 | Dado=0x000001f0 (496) | CS=0
+# [SW] t=180675.00 ns | PC=0x00000074 | ADDR=0x00001096 | Dado=0x0001ee10 (126480) | CS=1
+# [WATCHDOG] Limite maximo de simulacao atingido.
+# 
+# ==========================================================
+# [AVISO] Tempo maximo de simulacao atingido.
+# [AVISO] Nao foi detectada a condicao de termino.
+# [INFO] Verifique o PC e a execucao do programa.
+# ==========================================================
+# 
+# [RESULTADO] Tempo final: 200090.00 ns
+# [RESULTADO] Ciclos de PC: 1391
+# [RESULTADO] Escritas SW: 4
+# [RESULTADO] PC final: 0x00000018
+# 
+# [INFO] Log salvo em risc_TB_output.txt
+# ==========================================================
+# ** Note: $stop    : /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc_TB.v(207)
+#    Time: 200090 ns  Iteration: 2  Instance: /risc_TB
+# Break in Module risc_TB at /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc_TB.v line 207

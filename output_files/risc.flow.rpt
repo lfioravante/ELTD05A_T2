@@ -1,5 +1,5 @@
 Flow report for risc
-Fri Nov 27 00:24:37 2026
+Fri Nov 27 01:07:43 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Nov 27 00:24:37 2026       ;
+; Flow Status                        ; Successful - Fri Nov 27 01:07:43 2026       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; risc                                        ;
 ; Top-level Entity Name              ; risc                                        ;
@@ -111,7 +111,9 @@ refer to the applicable agreement for further details.
 ; Assembler            ; 00:00:09     ; 1.0                     ; 881 MB              ; 00:00:09                           ;
 ; Timing Analyzer      ; 00:00:06     ; 1.2                     ; 1031 MB             ; 00:00:07                           ;
 ; EDA Netlist Writer   ; 00:00:06     ; 1.0                     ; 1134 MB             ; 00:00:06                           ;
-; Total                ; 00:01:38     ; --                      ; --                  ; 00:02:25                           ;
+; MIF/HEX Update       ; 00:00:02     ; 1.0                     ; 1295 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:06     ; 1.0                     ; 1132 MB             ; 00:00:06                           ;
+; Total                ; 00:01:46     ; --                      ; --                  ; 00:02:33                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -125,6 +127,8 @@ refer to the applicable agreement for further details.
 ; Assembler            ; lucas-RV419-RV420 ; Ubuntu 24.04.5 ; 24         ; x86_64         ;
 ; Timing Analyzer      ; lucas-RV419-RV420 ; Ubuntu 24.04.5 ; 24         ; x86_64         ;
 ; EDA Netlist Writer   ; lucas-RV419-RV420 ; Ubuntu 24.04.5 ; 24         ; x86_64         ;
+; MIF/HEX Update       ; lucas-RV419-RV420 ; Ubuntu 24.04.5 ; 24         ; x86_64         ;
+; EDA Netlist Writer   ; lucas-RV419-RV420 ; Ubuntu 24.04.5 ; 24         ; x86_64         ;
 +----------------------+-------------------+----------------+------------+----------------+
 
 
@@ -136,6 +140,8 @@ quartus_fit --read_settings_files=off --write_settings_files=off risc -c risc
 quartus_asm --read_settings_files=off --write_settings_files=off risc -c risc
 quartus_sta risc -c risc
 quartus_eda --read_settings_files=off --write_settings_files=off risc -c risc
+quartus_cdb risc -c risc --update_mif
+quartus_eda --read_settings_files=on --write_settings_files=off risc -c risc
 
 
 
