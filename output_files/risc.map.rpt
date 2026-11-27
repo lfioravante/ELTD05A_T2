@@ -1,5 +1,5 @@
 Analysis & Synthesis report for risc
-Thu Nov 26 20:57:25 2026
+Thu Nov 26 21:23:58 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -88,13 +88,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 26 20:57:25 2026       ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov 26 21:23:58 2026       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; risc                                        ;
 ; Top-level Entity Name              ; risc                                        ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 3,230                                       ;
-;     Total combinational functions  ; 2,204                                       ;
+; Total logic elements               ; 3,059                                       ;
+;     Total combinational functions  ; 1,954                                       ;
 ;     Dedicated logic registers      ; 1,370                                       ;
 ; Total registers                    ; 1370                                        ;
 ; Total pins                         ; 165                                         ;
@@ -273,8 +273,8 @@ refer to the applicable agreement for further details.
 ;                          ;                  ;
 ; Maximum fan-out node     ; CLK_SYS          ;
 ; Maximum fan-out          ; 1436             ;
-; Total fan-out            ; 13762            ;
-; Average fan-out          ; 3.47             ;
+; Total fan-out            ; 13296            ;
+; Average fan-out          ; 3.58             ;
 +--------------------------+------------------+
 
 
@@ -283,30 +283,31 @@ refer to the applicable agreement for further details.
 +--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                          ; Entity Name       ; Library Name ;
 +--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-------------------+--------------+
-; |risc                                      ; 2204 (498)          ; 1370 (36)                 ; 65536       ; 0            ; 0       ; 0         ; 0         ; 165  ; 0            ; |risc                                                                                        ; risc              ; work         ;
-;    |ADDRDecoding:u_ADDRDecoding_Data|      ; 22 (22)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|ADDRDecoding:u_ADDRDecoding_Data                                                       ; ADDRDecoding      ; work         ;
+; |risc                                      ; 1954 (198)          ; 1370 (36)                 ; 65536       ; 0            ; 0       ; 0         ; 0         ; 165  ; 0            ; |risc                                                                                        ; risc              ; work         ;
+;    |ADDRDecoding:u_ADDRDecoding_Data|      ; 40 (40)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|ADDRDecoding:u_ADDRDecoding_Data                                                       ; ADDRDecoding      ; work         ;
 ;    |ADDRDecoding_Prog:u_ADDRDecoding_Prog| ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|ADDRDecoding_Prog:u_ADDRDecoding_Prog                                                  ; ADDRDecoding_Prog ; work         ;
 ;    |InstMem:u_InstMem|                     ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|InstMem:u_InstMem                                                                      ; InstMem           ; work         ;
 ;       |altsyncram:altsyncram_component|    ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|InstMem:u_InstMem|altsyncram:altsyncram_component                                      ; altsyncram        ; work         ;
 ;          |altsyncram_jv91:auto_generated|  ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|InstMem:u_InstMem|altsyncram:altsyncram_component|altsyncram_jv91:auto_generated       ; altsyncram_jv91   ; work         ;
-;    |Multiplicador:u_Multiplicador|         ; 65 (0)              ; 41 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|Multiplicador:u_Multiplicador                                                          ; Multiplicador     ; work         ;
-;       |ACC:acc|                            ; 17 (17)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|Multiplicador:u_Multiplicador|ACC:acc                                                  ; ACC               ; work         ;
-;       |Adder:adder|                        ; 35 (35)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|Multiplicador:u_Multiplicador|Adder:adder                                              ; Adder             ; work         ;
-;       |CONTROL:control|                    ; 8 (8)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|Multiplicador:u_Multiplicador|CONTROL:control                                          ; CONTROL           ; work         ;
+;    |Multiplicador:u_Multiplicador|         ; 64 (0)              ; 41 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|Multiplicador:u_Multiplicador                                                          ; Multiplicador     ; work         ;
+;       |ACC:acc|                            ; 35 (35)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|Multiplicador:u_Multiplicador|ACC:acc                                                  ; ACC               ; work         ;
+;       |Adder:adder|                        ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|Multiplicador:u_Multiplicador|Adder:adder                                              ; Adder             ; work         ;
+;       |CONTROL:control|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|Multiplicador:u_Multiplicador|CONTROL:control                                          ; CONTROL           ; work         ;
 ;       |Counter:counter|                    ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|Multiplicador:u_Multiplicador|Counter:counter                                          ; Counter           ; work         ;
 ;    |PLL:u_PLL|                             ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|PLL:u_PLL                                                                              ; PLL               ; work         ;
 ;       |altpll:altpll_component|            ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|PLL:u_PLL|altpll:altpll_component                                                      ; altpll            ; work         ;
 ;          |PLL_altpll:auto_generated|       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|PLL:u_PLL|altpll:altpll_component|PLL_altpll:auto_generated                            ; PLL_altpll        ; work         ;
-;    |alu:u_alu|                             ; 139 (139)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|alu:u_alu                                                                              ; alu               ; work         ;
+;    |alu:u_alu|                             ; 107 (107)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|alu:u_alu                                                                              ; alu               ; work         ;
 ;    |control:u_control|                     ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|control:u_control                                                                      ; control           ; work         ;
 ;    |datamemory:u_datamemory|               ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|datamemory:u_datamemory                                                                ; datamemory        ; work         ;
 ;       |altsyncram:altsyncram_component|    ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|datamemory:u_datamemory|altsyncram:altsyncram_component                                ; altsyncram        ; work         ;
 ;          |altsyncram_28i1:auto_generated|  ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|datamemory:u_datamemory|altsyncram:altsyncram_component|altsyncram_28i1:auto_generated ; altsyncram_28i1   ; work         ;
 ;    |mux:u_mux_alu_b|                       ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|mux:u_mux_alu_b                                                                        ; mux               ; work         ;
+;    |mux:u_mux_wb|                          ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|mux:u_mux_wb                                                                           ; mux               ; work         ;
 ;    |pc:u_pc|                               ; 32 (32)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|pc:u_pc                                                                                ; pc                ; work         ;
 ;    |register:u_reg_EXMEM_B|                ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_EXMEM_B                                                                 ; register          ; work         ;
 ;    |register:u_reg_EXMEM_CTRL|             ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_EXMEM_CTRL                                                              ; register          ; work         ;
-;    |register:u_reg_EXMEM_D|                ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_EXMEM_D                                                                 ; register          ; work         ;
+;    |register:u_reg_EXMEM_D|                ; 32 (32)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_EXMEM_D                                                                 ; register          ; work         ;
 ;    |register:u_reg_IDEX_A|                 ; 4 (4)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_IDEX_A                                                                  ; register          ; work         ;
 ;    |register:u_reg_IDEX_B|                 ; 4 (4)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_IDEX_B                                                                  ; register          ; work         ;
 ;    |register:u_reg_IDEX_CTRL|              ; 0 (0)               ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_IDEX_CTRL                                                               ; register          ; work         ;
@@ -316,7 +317,7 @@ refer to the applicable agreement for further details.
 ;    |register:u_reg_MEMWB_CTRL|             ; 0 (0)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_MEMWB_CTRL                                                              ; register          ; work         ;
 ;    |register:u_reg_MEMWB_D|                ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_MEMWB_D                                                                 ; register          ; work         ;
 ;    |register:u_reg_MEMWB_EXT|              ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_MEMWB_EXT                                                               ; register          ; work         ;
-;    |registerfile:u_registerfile|           ; 1394 (1394)         ; 992 (992)                 ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|registerfile:u_registerfile                                                            ; registerfile      ; work         ;
+;    |registerfile:u_registerfile|           ; 1395 (1395)         ; 992 (992)                 ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|registerfile:u_registerfile                                                            ; registerfile      ; work         ;
 +--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -355,16 +356,14 @@ Encoding Type:  One-Hot
 +------------------------+-----------------------+------------------------+------------------------+-----------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                               ;
-+---------------------------------------------------------------+--------------------------------------------------+
-; Register name                                                 ; Reason for Removal                               ;
-+---------------------------------------------------------------+--------------------------------------------------+
-; register:u_reg_IDEX_IMM|data_out[15..30]                      ; Merged with register:u_reg_IDEX_IMM|data_out[31] ;
-; Multiplicador:u_Multiplicador|CONTROL:control|current_state~4 ; Lost fanout                                      ;
-; Multiplicador:u_Multiplicador|CONTROL:control|current_state~5 ; Lost fanout                                      ;
-; Total Number of Removed Registers = 18                        ;                                                  ;
-+---------------------------------------------------------------+--------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                          ;
++------------------------------------------+--------------------------------------------------+
+; Register name                            ; Reason for Removal                               ;
++------------------------------------------+--------------------------------------------------+
+; register:u_reg_IDEX_IMM|data_out[16..31] ; Merged with register:u_reg_IDEX_IMM|data_out[15] ;
+; Total Number of Removed Registers = 16   ;                                                  ;
++------------------------------------------+--------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -374,8 +373,8 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Total registers                              ; 1370  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 32    ;
-; Number of registers using Asynchronous Clear ; 1370  ;
+; Number of registers using Synchronous Load   ; 64    ;
+; Number of registers using Asynchronous Clear ; 1130  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 1028  ;
 ; Number of registers using Preset             ; 0     ;
@@ -399,16 +398,17 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |risc|Multiplicador:u_Multiplicador|Counter:counter|count[0]  ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |risc|register:u_reg_IDEX_CTRL|data_out[3]                    ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |risc|Multiplicador:u_Multiplicador|ACC:acc|acc_reg[14]       ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |risc|Multiplicador:u_Multiplicador|ACC:acc|acc_reg[19]       ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |risc|pc:u_pc|data_out[19]                                    ;
-; 65:1               ; 3 bits    ; 129 LEs       ; 27 LEs               ; 102 LEs                ; Yes        ; |risc|register:u_reg_IDEX_CTRL|data_out[12]                   ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |risc|register:u_reg_IDEX_B|data_out[4]                       ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |risc|register:u_reg_IDEX_A|data_out[10]                      ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |risc|alu:u_alu|Mux12                                         ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |risc|register:u_reg_IDEX_CTRL|data_out[0]                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |risc|pc:u_pc|data_out[8]                                     ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |risc|Multiplicador:u_Multiplicador|ACC:acc|acc_reg[1]        ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |risc|Multiplicador:u_Multiplicador|ACC:acc|acc_reg[26]       ;
+; 65:1               ; 3 bits    ; 129 LEs       ; 27 LEs               ; 102 LEs                ; Yes        ; |risc|register:u_reg_IDEX_CTRL|data_out[6]                    ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |risc|register:u_reg_IDEX_B|data_out[28]                      ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |risc|register:u_reg_IDEX_A|data_out[11]                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |risc|alu:u_alu|data_out[14]                                  ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |risc|comb                                                    ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |risc|Multiplicador:u_Multiplicador|CONTROL:control|Selector3 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |risc|mux:u_mux_wb|data_out[2]                                ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |risc|Multiplicador:u_Multiplicador|CONTROL:control|Selector1 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 
 
@@ -613,638 +613,6 @@ Encoding Type:  One-Hot
 ; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; writeBack_data[1]  ;
 ; IGNORE_LCELL_BUFFERS         ; off   ; -    ; writeBack_data[0]  ;
 ; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; writeBack_data[0]  ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[31]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[31]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[30]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[30]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[29]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[29]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[28]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[28]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[27]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[27]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[26]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[26]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[25]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[25]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[24]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[24]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[23]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[23]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[22]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[22]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[21]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[21]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[20]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[20]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[19]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[19]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[18]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[18]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[17]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[17]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[16]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[16]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[15]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[15]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[14]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[14]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[13]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[13]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[12]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[12]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[11]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[11]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[10]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[10]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[9]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[9]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[8]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[8]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[7]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[7]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[6]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[6]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[5]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[5]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[4]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[4]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[3]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[3]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[2]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[2]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[1]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[1]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_A[0]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_A[0]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[31]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[31]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[30]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[30]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[29]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[29]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[28]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[28]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[27]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[27]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[26]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[26]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[25]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[25]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[24]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[24]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[23]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[23]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[22]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[22]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[21]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[21]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[20]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[20]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[19]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[19]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[18]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[18]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[17]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[17]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[16]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[16]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[15]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[15]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[14]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[14]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[13]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[13]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[12]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[12]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[11]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[11]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[10]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[10]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[9]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[9]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[8]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[8]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[7]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[7]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[6]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[6]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[5]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[5]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[4]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[4]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[3]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[3]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[2]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[2]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[1]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[1]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_B[0]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_B[0]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[31]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[31]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[30]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[30]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[29]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[29]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[28]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[28]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[27]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[27]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[26]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[26]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[25]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[25]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[24]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[24]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[23]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[23]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[22]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[22]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[21]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[21]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[20]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[20]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[19]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[19]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[18]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[18]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[17]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[17]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[16]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[16]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[15]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[15]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[14]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[14]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[13]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[13]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[12]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[12]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[11]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[11]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[10]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[10]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[9]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[9]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[8]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[8]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[7]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[7]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[6]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[6]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[5]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[5]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[4]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[4]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[3]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[3]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[2]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[2]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[1]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[1]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_IMM[0]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_IMM[0]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[31]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[31]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[30]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[30]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[29]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[29]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[28]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[28]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[27]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[27]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[26]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[26]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[25]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[25]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[24]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[24]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[23]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[23]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[22]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[22]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[21]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[21]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[20]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[20]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[19]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[19]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[18]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[18]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[17]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[17]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[16]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[16]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[15]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[15]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[14]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[14]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[13]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[13]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[12]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[12]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[11]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[11]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[10]    ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[10]    ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[9]     ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[9]     ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[8]     ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[8]     ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[7]     ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[7]     ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[6]     ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[6]     ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[5]     ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[5]     ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[4]     ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[4]     ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[3]     ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[3]     ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[2]     ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[2]     ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[1]     ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[1]     ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_PC_plus4[0]     ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_PC_plus4[0]     ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_CTRL[12]        ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_CTRL[12]        ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_CTRL[11]        ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_CTRL[11]        ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_CTRL[10]        ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_CTRL[10]        ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_CTRL[9]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_CTRL[9]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_CTRL[8]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_CTRL[8]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_CTRL[7]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_CTRL[7]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_CTRL[6]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_CTRL[6]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_CTRL[5]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_CTRL[5]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_CTRL[4]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_CTRL[4]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_CTRL[3]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_CTRL[3]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_CTRL[2]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_CTRL[2]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_CTRL[1]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_CTRL[1]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_CTRL[0]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_CTRL[0]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[31]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[31]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[30]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[30]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[29]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[29]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[28]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[28]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[27]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[27]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[26]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[26]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[25]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[25]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[24]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[24]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[23]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[23]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[22]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[22]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[21]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[21]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[20]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[20]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[19]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[19]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[18]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[18]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[17]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[17]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[16]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[16]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[15]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[15]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[14]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[14]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[13]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[13]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[12]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[12]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[11]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[11]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[10]      ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[10]      ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[9]       ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[9]       ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[8]       ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[8]       ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[7]       ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[7]       ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[6]       ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[6]       ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[5]       ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[5]       ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[4]       ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[4]       ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[3]       ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[3]       ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[2]       ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[2]       ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[1]       ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[1]       ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; ex_result[0]       ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; ex_result[0]       ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[31]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[31]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[30]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[30]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[29]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[29]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[28]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[28]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[27]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[27]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[26]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[26]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[25]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[25]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[24]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[24]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[23]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[23]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[22]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[22]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[21]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[21]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[20]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[20]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[19]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[19]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[18]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[18]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[17]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[17]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[16]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[16]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[15]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[15]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[14]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[14]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[13]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[13]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[12]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[12]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[11]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[11]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[10]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[10]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[9]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[9]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[8]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[8]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[7]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[7]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[6]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[6]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[5]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[5]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[4]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[4]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[3]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[3]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[2]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[2]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[1]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[1]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_D[0]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_D[0]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[31]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[31]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[30]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[30]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[29]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[29]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[28]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[28]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[27]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[27]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[26]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[26]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[25]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[25]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[24]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[24]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[23]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[23]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[22]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[22]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[21]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[21]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[20]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[20]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[19]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[19]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[18]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[18]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[17]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[17]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[16]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[16]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[15]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[15]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[14]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[14]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[13]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[13]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[12]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[12]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[11]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[11]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[10]          ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[10]          ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[9]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[9]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[8]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[8]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[7]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[7]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[6]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[6]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[5]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[5]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[4]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[4]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[3]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[3]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[2]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[2]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[1]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[1]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_B[0]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_B[0]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_CTRL[7]        ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_CTRL[7]        ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_CTRL[6]        ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_CTRL[6]        ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_CTRL[5]        ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_CTRL[5]        ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_CTRL[4]        ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_CTRL[4]        ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_CTRL[3]        ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_CTRL[3]        ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_CTRL[2]        ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_CTRL[2]        ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_CTRL[1]        ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_CTRL[1]        ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; mem_CTRL[0]        ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; mem_CTRL[0]        ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[31]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[31]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[30]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[30]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[29]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[29]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[28]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[28]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[27]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[27]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[26]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[26]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[25]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[25]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[24]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[24]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[23]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[23]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[22]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[22]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[21]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[21]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[20]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[20]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[19]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[19]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[18]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[18]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[17]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[17]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[16]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[16]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[15]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[15]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[14]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[14]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[13]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[13]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[12]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[12]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[11]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[11]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[10]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[10]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[9]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[9]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[8]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[8]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[7]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[7]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[6]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[6]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[5]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[5]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[4]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[4]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[3]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[3]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[2]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[2]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[1]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[1]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_D[0]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_D[0]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[31]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[31]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[30]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[30]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[29]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[29]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[28]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[28]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[27]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[27]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[26]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[26]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[25]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[25]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[24]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[24]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[23]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[23]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[22]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[22]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[21]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[21]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[20]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[20]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[19]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[19]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[18]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[18]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[17]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[17]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[16]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[16]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[15]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[15]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[14]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[14]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[13]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[13]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[12]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[12]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[11]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[11]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[10]           ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[10]           ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[9]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[9]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[8]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[8]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[7]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[7]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[6]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[6]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[5]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[5]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[4]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[4]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[3]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[3]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[2]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[2]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[1]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[1]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_M[0]            ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_M[0]            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_CTRL[6]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_CTRL[6]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_CTRL[5]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_CTRL[5]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_CTRL[4]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_CTRL[4]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_CTRL[3]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_CTRL[3]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_CTRL[2]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_CTRL[2]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_CTRL[1]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_CTRL[1]         ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; wb_CTRL[0]         ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; wb_CTRL[0]         ;
 +------------------------------+-------+------+--------------------+
 
 
@@ -1783,6 +1151,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                      ;
 +----------------+-------+-------------------------------------------+
 ; WIDTH          ; 32    ; Signed Integer                            ;
+; USE_RESET      ; 0     ; Signed Integer                            ;
 +----------------+-------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1793,6 +1162,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                      ;
 +----------------+-------+-------------------------------------------+
 ; WIDTH          ; 32    ; Signed Integer                            ;
+; USE_RESET      ; 0     ; Signed Integer                            ;
 +----------------+-------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1803,6 +1173,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                        ;
 +----------------+-------+---------------------------------------------+
 ; WIDTH          ; 32    ; Signed Integer                              ;
+; USE_RESET      ; 0     ; Signed Integer                              ;
 +----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1813,6 +1184,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                        ;
 +----------------+-------+---------------------------------------------+
 ; WIDTH          ; 32    ; Signed Integer                              ;
+; USE_RESET      ; 0     ; Signed Integer                              ;
 +----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1823,6 +1195,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                         ;
 +----------------+-------+----------------------------------------------+
 ; WIDTH          ; 13    ; Signed Integer                               ;
+; USE_RESET      ; 1     ; Signed Integer                               ;
 +----------------+-------+----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1903,6 +1276,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                       ;
 +----------------+-------+--------------------------------------------+
 ; WIDTH          ; 32    ; Signed Integer                             ;
+; USE_RESET      ; 0     ; Signed Integer                             ;
 +----------------+-------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1913,6 +1287,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                       ;
 +----------------+-------+--------------------------------------------+
 ; WIDTH          ; 32    ; Signed Integer                             ;
+; USE_RESET      ; 0     ; Signed Integer                             ;
 +----------------+-------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1923,6 +1298,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                          ;
 +----------------+-------+-----------------------------------------------+
 ; WIDTH          ; 8     ; Signed Integer                                ;
+; USE_RESET      ; 1     ; Signed Integer                                ;
 +----------------+-------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -2004,6 +1380,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                       ;
 +----------------+-------+--------------------------------------------+
 ; WIDTH          ; 32    ; Signed Integer                             ;
+; USE_RESET      ; 0     ; Signed Integer                             ;
 +----------------+-------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -2014,6 +1391,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                         ;
 +----------------+-------+----------------------------------------------+
 ; WIDTH          ; 32    ; Signed Integer                               ;
+; USE_RESET      ; 0     ; Signed Integer                               ;
 +----------------+-------+----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -2024,6 +1402,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                        ;
 +----------------+-------+---------------------------------------------+
 ; WIDTH          ; 1     ; Signed Integer                              ;
+; USE_RESET      ; 1     ; Signed Integer                              ;
 +----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -2034,6 +1413,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                          ;
 +----------------+-------+-----------------------------------------------+
 ; WIDTH          ; 7     ; Signed Integer                                ;
+; USE_RESET      ; 1     ; Signed Integer                                ;
 +----------------+-------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -2125,13 +1505,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:u_control"                                                                      ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; mem_read ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------+
+; Port Connectivity Checks: "control:u_control"         ;
++----------+--------+----------+------------------------+
+; Port     ; Type   ; Severity ; Details                ;
++----------+--------+----------+------------------------+
+; mem_read ; Output ; Info     ; Explicitly unconnected ;
++----------+--------+----------+------------------------+
 
 
 +-----------------------------------------------------+
@@ -2141,24 +1521,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; boundary_port         ; 165                         ;
 ; cycloneiii_ff         ; 1370                        ;
-;     CLR               ; 310                         ;
+;     CLR               ; 70                          ;
 ;     CLR SLD           ; 32                          ;
 ;     ENA CLR           ; 1028                        ;
-; cycloneiii_lcell_comb ; 2206                        ;
-;     arith             ; 117                         ;
-;         2 data inputs ; 39                          ;
+;     SLD               ; 32                          ;
+;     plain             ; 208                         ;
+; cycloneiii_lcell_comb ; 1956                        ;
+;     arith             ; 139                         ;
+;         2 data inputs ; 61                          ;
 ;         3 data inputs ; 78                          ;
-;     normal            ; 2089                        ;
+;     normal            ; 1817                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 290                         ;
-;         2 data inputs ; 13                          ;
-;         3 data inputs ; 241                         ;
-;         4 data inputs ; 1544                        ;
+;         1 data inputs ; 38                          ;
+;         2 data inputs ; 29                          ;
+;         3 data inputs ; 211                         ;
+;         4 data inputs ; 1538                        ;
 ; cycloneiii_ram_block  ; 64                          ;
 ; cycloneiv_pll         ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 13.10                       ;
-; Average LUT depth     ; 5.96                        ;
+; Max LUT depth         ; 12.10                       ;
+; Average LUT depth     ; 5.79                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2167,7 +1549,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:08     ;
+; Top            ; 00:00:06     ;
 +----------------+--------------+
 
 
@@ -2177,7 +1559,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Nov 26 20:56:55 2026
+    Info: Processing started: Thu Nov 26 21:23:31 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off risc -c risc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -2342,8 +1724,6 @@ Info (12133): Instantiated megafunction "InstMem:u_InstMem|altsyncram:altsyncram
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jv91.tdf
     Info (12023): Found entity 1: altsyncram_jv91 File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/db/altsyncram_jv91.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_jv91" for hierarchy "InstMem:u_InstMem|altsyncram:altsyncram_component|altsyncram_jv91:auto_generated" File: /home/lucas/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Warning (113007): Byte addressed memory initialization file "Code.hex" was read in the word-addressed format File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Code.hex Line: 1
-Critical Warning (127005): Memory depth (1024) in the design file differs from memory depth (105) in the Memory Initialization File "/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Code.hex" -- setting initial value for remaining addresses to 0 File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/InstMem.v Line: 81
 Info (12128): Elaborating entity "mux" for hierarchy "mux:u_mux_inst" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 123
 Info (12128): Elaborating entity "registerfile" for hierarchy "registerfile:u_registerfile" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 159
 Warning (10240): Verilog HDL Always Construct warning at registerfile.v(21): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/registerfile.v Line: 21
@@ -2358,14 +1738,15 @@ Info (12128): Elaborating entity "extend" for hierarchy "extend:u_extend" File: 
 Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_IDEX_A" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 194
 Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_IDEX_CTRL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 198
 Info (12128): Elaborating entity "alu" for hierarchy "alu:u_alu" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 232
-Info (12128): Elaborating entity "Multiplicador" for hierarchy "Multiplicador:u_Multiplicador" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 261
+Info (12128): Elaborating entity "Multiplicador" for hierarchy "Multiplicador:u_Multiplicador" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 264
 Info (12128): Elaborating entity "Adder" for hierarchy "Multiplicador:u_Multiplicador|Adder:adder" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Multiplicador/Multiplicador.v Line: 26
 Info (12128): Elaborating entity "ACC" for hierarchy "Multiplicador:u_Multiplicador|ACC:acc" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Multiplicador/Multiplicador.v Line: 36
+Info (10264): Verilog HDL Case Statement information at ACC.v(14): all case item expressions in this case statement are onehot File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Multiplicador/ACC.v Line: 14
 Info (12128): Elaborating entity "CONTROL" for hierarchy "Multiplicador:u_Multiplicador|CONTROL:control" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Multiplicador/Multiplicador.v Line: 49
 Info (12128): Elaborating entity "Counter" for hierarchy "Multiplicador:u_Multiplicador|Counter:counter" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Multiplicador/Multiplicador.v Line: 57
-Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_EXMEM_CTRL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 280
-Info (12128): Elaborating entity "ADDRDecoding" for hierarchy "ADDRDecoding:u_ADDRDecoding_Data" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 306
-Info (12128): Elaborating entity "datamemory" for hierarchy "datamemory:u_datamemory" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 314
+Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_EXMEM_CTRL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 283
+Info (12128): Elaborating entity "ADDRDecoding" for hierarchy "ADDRDecoding:u_ADDRDecoding_Data" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 309
+Info (12128): Elaborating entity "datamemory" for hierarchy "datamemory:u_datamemory" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 317
 Info (12128): Elaborating entity "altsyncram" for hierarchy "datamemory:u_datamemory|altsyncram:altsyncram_component" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/datamemory.v Line: 85
 Info (12130): Elaborated megafunction instantiation "datamemory:u_datamemory|altsyncram:altsyncram_component" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/datamemory.v Line: 85
 Info (12133): Instantiated megafunction "datamemory:u_datamemory|altsyncram:altsyncram_component" with the following parameter: File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/datamemory.v Line: 85
@@ -2387,12 +1768,11 @@ Info (12133): Instantiated megafunction "datamemory:u_datamemory|altsyncram:alts
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_28i1.tdf
     Info (12023): Found entity 1: altsyncram_28i1 File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/db/altsyncram_28i1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_28i1" for hierarchy "datamemory:u_datamemory|altsyncram:altsyncram_component|altsyncram_28i1:auto_generated" File: /home/lucas/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_MEMWB_CS" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 329
-Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_MEMWB_CTRL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 330
+Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_MEMWB_CS" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 332
+Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_MEMWB_CTRL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 333
 Info (13000): Registers with preset signals will power-up high File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 65
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "PC[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
     Info (17048): Logic cell "PC[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
@@ -2426,270 +1806,18 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "PC[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
     Info (17048): Logic cell "PC[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
     Info (17048): Logic cell "PC[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "mem_D[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_D[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_B[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 275
-    Info (17048): Logic cell "mem_CTRL[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 276
-    Info (17048): Logic cell "ex_PC_plus4[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_CTRL[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
-    Info (17048): Logic cell "ex_CTRL[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
-    Info (17048): Logic cell "ex_CTRL[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
-    Info (17048): Logic cell "ex_B[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_CTRL[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
-    Info (17048): Logic cell "ex_A[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_IMM[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_B[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_A[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_PC_plus4[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 191
-    Info (17048): Logic cell "ex_CTRL[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
-    Info (17048): Logic cell "ex_CTRL[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
-    Info (17048): Logic cell "wb_CTRL[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 323
-    Info (17048): Logic cell "wb_CTRL[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 323
-    Info (17048): Logic cell "wb_CTRL[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 323
-    Info (17048): Logic cell "wb_CTRL[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 323
-    Info (17048): Logic cell "wb_CTRL[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 323
-    Info (17048): Logic cell "wb_CTRL[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 323
-    Info (17048): Logic cell "wb_D[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_CTRL[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 323
-    Info (17048): Logic cell "wb_D[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "wb_D[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 321
-    Info (17048): Logic cell "mem_CTRL[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 276
-    Info (17048): Logic cell "mem_CTRL[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 276
-    Info (17048): Logic cell "mem_CTRL[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 276
-    Info (17048): Logic cell "mem_CTRL[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 276
-    Info (17048): Logic cell "mem_CTRL[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 276
-    Info (17048): Logic cell "mem_CTRL[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 276
-    Info (17048): Logic cell "mem_CTRL[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 276
-    Info (17048): Logic cell "ex_CTRL[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
-    Info (17048): Logic cell "ex_CTRL[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
-    Info (17048): Logic cell "ex_CTRL[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
-    Info (17048): Logic cell "ex_CTRL[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
-    Info (17048): Logic cell "ex_CTRL[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
-    Info (17048): Logic cell "ex_CTRL[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
-    Info (17048): Logic cell "ex_CTRL[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 192
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3606 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3403 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 66 input pins
     Info (21059): Implemented 99 output pins
-    Info (21061): Implemented 3376 logic cells
+    Info (21061): Implemented 3173 logic cells
     Info (21064): Implemented 64 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 1097 megabytes
-    Info: Processing ended: Thu Nov 26 20:57:25 2026
-    Info: Elapsed time: 00:00:30
-    Info: Total CPU time (on all processors): 00:01:02
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 1098 megabytes
+    Info: Processing ended: Thu Nov 26 21:23:58 2026
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:01:00
 
 
