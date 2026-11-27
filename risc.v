@@ -51,40 +51,49 @@ module risc #(
     );
 
     // =========================================================================
-    // 2. Estagio IF (Instruction Fetch) - BRAM absorve IF/ID
+    // Sinais de realimentacao entre estagios (BNE, JMP e Write-Back)
+    // =========================================================================
+    wire             jmpFlag;
+    wire [25:0]      jmpAddress;
+    wire             ex_branch_flag;
+    wire             alu_zero;
+    wire [WIDTH-1:0] ex_IMM;
+    wire             flush_ctrl;
+    wire             flush_if_cmd;
+
+    (* keep = 1 *) wire [WIDTH-1:0] writeBack_data;
+    wire                            wb_reg_write;
+    wire [4:0]                      wb_dest;
+
+    // =========================================================================
+    // 2. Estagio IF (Instruction Fetch) - InstMem sincrona absorve IF/ID
     // =========================================================================
     (* keep = 1 *) wire [WIDTH-1:0] PC;
     wire [WIDTH-1:0] PC_plus4 = PC + 32'd4;
-    wire [WIDTH-1:0] PC_next;
-
     wire [WIDTH-1:0] instmem_q;
     wire [9:0]       prog_iAddress;
 
     reg              id_CS_P;
     reg  [WIDTH-1:0] id_prog_bus_read;
-    reg              flush_if;
+    reg              flush_if_reg;
 
-    wire             jmpFlag;
-    wire [25:0]      jmpAddress;
-    wire             branch_taken;
-    wire [WIDTH-1:0] branch_target;
-
-    wire [WIDTH-1:0] jmp_target = {PC[31:26], jmpAddress};
-    wire             jmp_taken  = jmpFlag & ~branch_taken;
-
-    assign PC_next   = branch_taken ? branch_target :
-                       jmp_taken    ? jmp_target    :
-                                      PC_plus4;
     assign ADDR_Prog = PC;
 
     pc #(
         .WIDTH      (WIDTH),
         .RESET_ADDR (BASE_PROG)
     ) u_pc (
-        .clk      (CLK_SYS),
-        .rst      (rst_sys),
-        .data_in  (PC_next),
-        .data_out (PC)
+        .clk          (CLK_SYS),
+        .rst          (rst_sys),
+        .data_in      (PC_plus4),
+        .jmpFlag      (jmpFlag),
+        .jmpAddress   (jmpAddress),
+        .branchFlag   (ex_branch_flag),
+        .zeroFlag     (alu_zero),
+        .branchOffset (ex_IMM),
+        .data_out     (PC),
+        .flush_ctrl   (flush_ctrl),
+        .flush_if     (flush_if_cmd)
     );
 
     ADDRDecoding_Prog #(
@@ -105,11 +114,11 @@ module risc #(
         if (rst_sys) begin
             id_CS_P          <= 1'b1;
             id_prog_bus_read <= {WIDTH{1'b0}};
-            flush_if         <= 1'b1;
+            flush_if_reg     <= 1'b1;
         end else begin
             id_CS_P          <= CS_P;
             id_prog_bus_read <= Prog_BUS_READ;
-            flush_if         <= branch_taken | jmp_taken;
+            flush_if_reg     <= flush_if_cmd;
         end
     end
 
@@ -122,7 +131,7 @@ module risc #(
         .data_out  (inst_mux_out)
     );
 
-    (* keep = 1 *) wire [WIDTH-1:0] INST = flush_if ? 32'd0 : inst_mux_out;
+    (* keep = 1 *) wire [WIDTH-1:0] INST = flush_if_reg ? 32'd0 : inst_mux_out;
 
     // =========================================================================
     // 3. Estagio ID (Instruction Decode)
@@ -138,10 +147,6 @@ module risc #(
     wire             branchFlag;
     wire [1:0]       alu_op;
     wire             alu_src_b, sel_mul, reg_write, mem_write, mem_to_reg, reg_dst;
-
-    (* keep = 1 *) wire [WIDTH-1:0] writeBack_data;
-    wire                            wb_reg_write;
-    wire [4:0]                      wb_dest;
 
     registerfile #(
         .DATA_WIDTH (WIDTH),
@@ -181,37 +186,34 @@ module risc #(
         .out (imm_ext)
     );
 
-    wire [4:0]  dest        = reg_dst ? rd : rt;
-    wire [12:0] id_ctrl_raw = {reg_write, mem_to_reg, mem_write, branchFlag, sel_mul, alu_src_b, alu_op, dest};
-    wire [12:0] id_ctrl_in  = branch_taken ? 13'd0 : id_ctrl_raw;
+    wire [4:0]  dest       = reg_dst ? rd : rt;
+    wire [12:0] id_ctrl_in = {reg_write, mem_to_reg, mem_write, branchFlag, sel_mul, alu_src_b, alu_op, dest};
 
     // =========================================================================
-    // Registrador de Pipeline: ID/EX (Dados sem reset; Controle com reset)
+    // Registrador de Pipeline: ID/EX (CTRL recebe limpeza sincrona flush_ctrl)
     // =========================================================================
-    wire [WIDTH-1:0] ex_A, ex_B, ex_IMM, ex_PC_plus4;
+    wire [WIDTH-1:0] ex_A, ex_B;
     wire [12:0]      ex_CTRL;
 
-    register #(.WIDTH(WIDTH), .USE_RESET(0)) u_reg_IDEX_A    (.clk(CLK_SYS), .rst(rst_sys), .data_in(dataOut1),   .data_out(ex_A));
-    register #(.WIDTH(WIDTH), .USE_RESET(0)) u_reg_IDEX_B    (.clk(CLK_SYS), .rst(rst_sys), .data_in(dataOut2),   .data_out(ex_B));
-    register #(.WIDTH(WIDTH), .USE_RESET(0)) u_reg_IDEX_IMM  (.clk(CLK_SYS), .rst(rst_sys), .data_in(imm_ext),    .data_out(ex_IMM));
-    register #(.WIDTH(WIDTH), .USE_RESET(0)) u_reg_IDEX_PC4  (.clk(CLK_SYS), .rst(rst_sys), .data_in(PC),         .data_out(ex_PC_plus4));
-    register #(.WIDTH(13),    .USE_RESET(1)) u_reg_IDEX_CTRL (.clk(CLK_SYS), .rst(rst_sys), .data_in(id_ctrl_in), .data_out(ex_CTRL));
+    register #(.WIDTH(WIDTH), .USE_RESET(0)) u_reg_IDEX_A    (.clk(CLK_SYS), .rst(rst_sys), .clr(1'b0),       .data_in(dataOut1),   .data_out(ex_A));
+    register #(.WIDTH(WIDTH), .USE_RESET(0)) u_reg_IDEX_B    (.clk(CLK_SYS), .rst(rst_sys), .clr(1'b0),       .data_in(dataOut2),   .data_out(ex_B));
+    register #(.WIDTH(WIDTH), .USE_RESET(0)) u_reg_IDEX_IMM  (.clk(CLK_SYS), .rst(rst_sys), .clr(1'b0),       .data_in(imm_ext),    .data_out(ex_IMM));
+    register #(.WIDTH(13),    .USE_RESET(1)) u_reg_IDEX_CTRL (.clk(CLK_SYS), .rst(rst_sys), .clr(flush_ctrl), .data_in(id_ctrl_in), .data_out(ex_CTRL));
 
     // =========================================================================
     // 4. Estagio EX (Execute)
     // =========================================================================
-    wire       ex_reg_write   = ex_CTRL[12];
-    wire       ex_mem_to_reg  = ex_CTRL[11];
-    wire       ex_mem_write   = ex_CTRL[10];
-    wire       ex_branch_flag = ex_CTRL[9];
-    wire       ex_sel_mul     = ex_CTRL[8];
-    wire       ex_alu_src_b   = ex_CTRL[7];
-    wire [1:0] ex_alu_op      = ex_CTRL[6:5];
-    wire [4:0] ex_dest        = ex_CTRL[4:0];
+    wire       ex_reg_write  = ex_CTRL[12];
+    wire       ex_mem_to_reg = ex_CTRL[11];
+    wire       ex_mem_write  = ex_CTRL[10];
+    assign     ex_branch_flag = ex_CTRL[9];
+    wire       ex_sel_mul    = ex_CTRL[8];
+    wire       ex_alu_src_b  = ex_CTRL[7];
+    wire [1:0] ex_alu_op     = ex_CTRL[6:5];
+    wire [4:0] ex_dest       = ex_CTRL[4:0];
 
     wire [WIDTH-1:0] alu_in_b;
     wire [WIDTH-1:0] alu_out;
-    wire             alu_zero;
     wire [WIDTH-1:0] mul_out;
     wire             mul_idle, mul_done;
     wire [WIDTH-1:0] ex_result;
@@ -231,10 +233,7 @@ module risc #(
         .zero      (alu_zero)
     );
 
-    assign branch_taken  = ex_branch_flag & ~alu_zero;
-    assign branch_target = ex_PC_plus4 + ex_IMM;
-
-    // Geracao de pulso St (1 ciclo de CLK_MUL) e isolamento de operandos para potencia
+    // Geracao de pulso St de 1 ciclo de CLK_MUL por ciclo de CLK_SYS com MUL ativo
     reg sys_toggle;
     reg sys_toggle_d;
 
@@ -248,13 +247,11 @@ module risc #(
         else         sys_toggle_d <= sys_toggle;
     end
 
-    wire        mul_start = ex_sel_mul & (sys_toggle ^ sys_toggle_d);
-    wire [15:0] mul_op_a  = ex_sel_mul ? ex_A[15:0] : 16'd0;
-    wire [15:0] mul_op_b  = ex_sel_mul ? ex_B[15:0] : 16'd0;
+    wire mul_start = ex_sel_mul & (sys_toggle ^ sys_toggle_d);
 
     Multiplicador #(.N(16)) u_Multiplicador (
-        .Multiplicando (mul_op_a),
-        .Multiplicador (mul_op_b),
+        .Multiplicando (ex_A[15:0]),
+        .Multiplicador (ex_B[15:0]),
         .St            (mul_start),
         .Clk           (CLK_MUL),
         .rst           (rst_sys),
@@ -273,17 +270,17 @@ module risc #(
     wire [7:0] ex_ctrl_out = {ex_reg_write, ex_mem_to_reg, ex_mem_write, ex_dest};
 
     // =========================================================================
-    // Registrador de Pipeline: EX/MEM (Dados sem reset; Controle com reset)
+    // Registrador de Pipeline: EX/MEM
     // =========================================================================
     wire [WIDTH-1:0] mem_D, mem_B;
     wire [7:0]       mem_CTRL;
 
-    register #(.WIDTH(WIDTH), .USE_RESET(0)) u_reg_EXMEM_D    (.clk(CLK_SYS), .rst(rst_sys), .data_in(ex_result),   .data_out(mem_D));
-    register #(.WIDTH(WIDTH), .USE_RESET(0)) u_reg_EXMEM_B    (.clk(CLK_SYS), .rst(rst_sys), .data_in(ex_B),        .data_out(mem_B));
-    register #(.WIDTH(8),     .USE_RESET(1)) u_reg_EXMEM_CTRL (.clk(CLK_SYS), .rst(rst_sys), .data_in(ex_ctrl_out), .data_out(mem_CTRL));
+    register #(.WIDTH(WIDTH), .USE_RESET(0)) u_reg_EXMEM_D    (.clk(CLK_SYS), .rst(rst_sys), .clr(1'b0), .data_in(ex_result),   .data_out(mem_D));
+    register #(.WIDTH(WIDTH), .USE_RESET(0)) u_reg_EXMEM_B    (.clk(CLK_SYS), .rst(rst_sys), .clr(1'b0), .data_in(ex_B),        .data_out(mem_B));
+    register #(.WIDTH(8),     .USE_RESET(1)) u_reg_EXMEM_CTRL (.clk(CLK_SYS), .rst(rst_sys), .clr(1'b0), .data_in(ex_ctrl_out), .data_out(mem_CTRL));
 
     // =========================================================================
-    // 5. Estagio MEM (Memory Access) - BRAM absorve registrador de saida M
+    // 5. Estagio MEM (Memory Access) - datamemory sincrona absorve registo M
     // =========================================================================
     wire       mem_reg_write  = mem_CTRL[7];
     wire       mem_mem_to_reg = mem_CTRL[6];
@@ -319,7 +316,7 @@ module risc #(
     wire [6:0] mem_ctrl_out = {mem_reg_write, mem_mem_to_reg, mem_dest};
 
     // =========================================================================
-    // Registrador de Pipeline: MEM/WB (Dados sem reset; Controle e CS com reset)
+    // Registrador de Pipeline: MEM/WB
     // =========================================================================
     wire [WIDTH-1:0] wb_D;
     wire [WIDTH-1:0] wb_M;
@@ -327,10 +324,10 @@ module risc #(
     wire [WIDTH-1:0] wb_ext_data;
     wire             wb_CS;
 
-    register #(.WIDTH(WIDTH), .USE_RESET(0)) u_reg_MEMWB_D    (.clk(CLK_SYS), .rst(rst_sys), .data_in(mem_D),         .data_out(wb_D));
-    register #(.WIDTH(WIDTH), .USE_RESET(0)) u_reg_MEMWB_EXT  (.clk(CLK_SYS), .rst(rst_sys), .data_in(Data_BUS_READ), .data_out(wb_ext_data));
-    register #(.WIDTH(1),     .USE_RESET(1)) u_reg_MEMWB_CS   (.clk(CLK_SYS), .rst(rst_sys), .data_in(CS),            .data_out(wb_CS));
-    register #(.WIDTH(7),     .USE_RESET(1)) u_reg_MEMWB_CTRL (.clk(CLK_SYS), .rst(rst_sys), .data_in(mem_ctrl_out),  .data_out(wb_CTRL));
+    register #(.WIDTH(WIDTH), .USE_RESET(0)) u_reg_MEMWB_D    (.clk(CLK_SYS), .rst(rst_sys), .clr(1'b0), .data_in(mem_D),         .data_out(wb_D));
+    register #(.WIDTH(WIDTH), .USE_RESET(0)) u_reg_MEMWB_EXT  (.clk(CLK_SYS), .rst(rst_sys), .clr(1'b0), .data_in(Data_BUS_READ), .data_out(wb_ext_data));
+    register #(.WIDTH(1),     .USE_RESET(1)) u_reg_MEMWB_CS   (.clk(CLK_SYS), .rst(rst_sys), .clr(1'b0), .data_in(CS),            .data_out(wb_CS));
+    register #(.WIDTH(7),     .USE_RESET(1)) u_reg_MEMWB_CTRL (.clk(CLK_SYS), .rst(rst_sys), .clr(1'b0), .data_in(mem_ctrl_out),  .data_out(wb_CTRL));
 
     // =========================================================================
     // 6. Estagio WB (Write Back)

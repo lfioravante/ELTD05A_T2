@@ -1,35 +1,120 @@
+`timescale 1ns/1ps
+
 module risc_TB;
-	reg [WIDTH-1:0] Data_BUS_READ;
-	reg [WIDTH-1:0] Prog_BUS_READ;
-	reg CLK;
-	reg RST;
-	
-	wire [WIDTH-1:0] ADDR_Prog,
-	wire CS_P;
-	wire [WIDTH-1:0] ADDR;
-	wire [WIDTH-1:0] Data_BUS_WRITE;
-	wire WE;
-	wire CS;
-	
-	risc #(32) DUT (.Data_BUS_READ(Data_BUS_READ), 
-	.Prog_BUS_READ(Prog_BUS_READ), 
-	.CLK(), 
-	.RST(), 
-	.ADDR_Prog(ADDR_Prog), 
-	.CS_P(CS_P), 
-	.ADDR(ADDR), 
-	.Data_BUS_WRITE(Data_BUS_WRITE),
-	.WE(WE),
-	.CS(CS));
-	
-	initial clk = 0;
-	always #10 clk = ~clk;
-	
-	initial begin
-		RST = 1;
-		#100
-		RST = 0;
-		#100
-	$stop;
-	end
-	
+
+    parameter WIDTH = 32;
+
+    reg  [WIDTH-1:0] Data_BUS_READ;
+    reg  [WIDTH-1:0] Prog_BUS_READ;
+    reg              CLK;
+    reg              RST;
+
+    wire [WIDTH-1:0] ADDR_Prog;
+    wire             CS_P;
+    wire [WIDTH-1:0] ADDR;
+    wire [WIDTH-1:0] Data_BUS_WRITE;
+    wire             WE;
+    wire             CS;
+
+    // Variaveis de controle do log em arquivo .txt
+    integer          fd;
+    integer          ciclo_pc;
+    integer          total_sw;
+    reg  [WIDTH-1:0] prev_addr_prog;
+    reg              prev_we;
+
+    // Instanciacao do processador (DUT)
+    risc dut (
+        .Data_BUS_READ  (Data_BUS_READ),
+        .Prog_BUS_READ  (Prog_BUS_READ),
+        .CLK            (CLK),
+        .RST            (RST),
+        .ADDR_Prog      (ADDR_Prog),
+        .CS_P           (CS_P),
+        .ADDR           (ADDR),
+        .Data_BUS_WRITE (Data_BUS_WRITE),
+        .WE             (WE),
+        .CS             (CS)
+    );
+
+    // Relogio externo de referencia: 50 MHz (periodo = 20 ns)
+    initial CLK = 1'b0;
+    always #10.0 CLK = ~CLK;
+
+    // Inicializacao de estimulos e criacao do arquivo de saida .txt
+    initial begin
+        Data_BUS_READ  = 32'h0000_0000;
+        Prog_BUS_READ  = 32'h0000_0000;
+        RST            = 1'b1;
+        ciclo_pc       = 0;
+        total_sw       = 0;
+        prev_addr_prog = 32'hFFFF_FFFF;
+        prev_we        = 1'b0;
+
+        fd = $fopen("risc_TB_output.txt", "w");
+        if (fd == 0) begin
+            $display("[ERRO] Nao foi possivel criar o arquivo risc_TB_output.txt");
+            $stop;
+        end
+
+        $fdisplay(fd, "==============================================================================================");
+        $fdisplay(fd, " LOG DE SIMULACAO - PROCESSADOR RISC 5 ESTAGIOS (GRUPO 11)");
+        $fdisplay(fd, " CteMemProg = 0x00000000 (BASE_PROG = 0x00000000) | CteMemDados = 0x0125 (BASE_DADOS = 0x0C97)");
+        $fdisplay(fd, "==============================================================================================");
+        $fdisplay(fd, "   Tempo(ns) | Ciclo |  ADDR_Prog | CS_P |       ADDR | Data_BUS_WRITE | WE | CS | Evento");
+        $fdisplay(fd, "----------------------------------------------------------------------------------------------");
+
+        $display("[INFO] Arquivo risc_TB_output.txt aberto. Aplicando Reset...");
+
+        // Pulso inicial de reset (100 ns = 5 ciclos de 50 MHz)
+        #100;
+        RST = 1'b0;
+        $display("[INFO] Reset liberado em %0t ns. Aguardando travamento da PLL...", $time);
+
+        // Duracao de 200 us: cobre travamento da PLL, 2 lacos de 32 iteracoes, MUL, SW e JMP
+        #20000000;
+
+        $fdisplay(fd, "----------------------------------------------------------------------------------------------");
+        $fdisplay(fd, " FIM DA SIMULACAO em %0t ns | Ciclos de PC registrados: %0d | Total de SW: %0d",
+                  $time, ciclo_pc, total_sw);
+        $fdisplay(fd, "==============================================================================================");
+        $fclose(fd);
+
+        $display("[FIM] Simulacao encerrada em %0t ns | Ciclos: %0d | Escritas SW: %0d",
+                 $time, ciclo_pc, total_sw);
+        $display("[INFO] Log salvo em simulation/modelsim/risc_TB_output.txt");
+        $stop;
+    end
+
+    // Amostragem livre de glitches em Gate-Level (5 ns apos posedge CLK)
+    always @(posedge CLK) begin
+        #5;
+        if (!RST) begin
+            if (ADDR_Prog !== prev_addr_prog) begin
+                ciclo_pc = ciclo_pc + 1;
+
+                if (WE && !prev_we) begin
+                    total_sw = total_sw + 1;
+                    $fdisplay(fd, "%12t | %5d | 0x%08h |   %b  | 0x%08h |     0x%08h |  %b |  %b | [SW] Dado=%0d",
+                              $time, ciclo_pc, ADDR_Prog, CS_P, ADDR, Data_BUS_WRITE, WE, CS, Data_BUS_WRITE);
+                    $display("[SW] t=%0t ns | PC=0x%08h | ADDR=0x%08h | Dado=0x%08h (%0d) | CS=%b",
+                             $time, ADDR_Prog, ADDR, Data_BUS_WRITE, Data_BUS_WRITE, CS);
+                end else begin
+                    $fdisplay(fd, "%12t | %5d | 0x%08h |   %b  | 0x%08h |     0x%08h |  %b |  %b |",
+                              $time, ciclo_pc, ADDR_Prog, CS_P, ADDR, Data_BUS_WRITE, WE, CS);
+                end
+
+                prev_addr_prog = ADDR_Prog;
+            end else if (WE && !prev_we) begin
+                total_sw = total_sw + 1;
+                $fdisplay(fd, "%12t | %5d | 0x%08h |   %b  | 0x%08h |     0x%08h |  %b |  %b | [SW] Dado=%0d",
+                          $time, ciclo_pc, ADDR_Prog, CS_P, ADDR, Data_BUS_WRITE, WE, CS, Data_BUS_WRITE);
+                $display("[SW] t=%0t ns | PC=0x%08h | ADDR=0x%08h | Dado=0x%08h (%0d) | CS=%b",
+                         $time, ADDR_Prog, ADDR, Data_BUS_WRITE, Data_BUS_WRITE, CS);
+            end
+
+            prev_we = WE;
+        end
+    end
+
+endmodule

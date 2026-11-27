@@ -412,15 +412,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "Prog_BUS_READ[28]",
+					"strict" : false
+				},
+				{
 					"name" : "Prog_BUS_READ[31]",
 					"strict" : false
 				},
 				{
 					"name" : "Prog_BUS_READ[29]",
-					"strict" : false
-				},
-				{
-					"name" : "Prog_BUS_READ[28]",
 					"strict" : false
 				},
 				{

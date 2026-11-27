@@ -1,5 +1,5 @@
 Analysis & Synthesis report for risc
-Thu Nov 26 21:23:58 2026
+Fri Nov 27 00:23:17 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -35,34 +35,43 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  27. Parameter Settings for User Entity Instance: register:u_reg_IDEX_A
  28. Parameter Settings for User Entity Instance: register:u_reg_IDEX_B
  29. Parameter Settings for User Entity Instance: register:u_reg_IDEX_IMM
- 30. Parameter Settings for User Entity Instance: register:u_reg_IDEX_PC4
- 31. Parameter Settings for User Entity Instance: register:u_reg_IDEX_CTRL
- 32. Parameter Settings for User Entity Instance: mux:u_mux_alu_b
- 33. Parameter Settings for User Entity Instance: alu:u_alu
- 34. Parameter Settings for User Entity Instance: Multiplicador:u_Multiplicador
- 35. Parameter Settings for User Entity Instance: Multiplicador:u_Multiplicador|Adder:adder
- 36. Parameter Settings for User Entity Instance: Multiplicador:u_Multiplicador|ACC:acc
- 37. Parameter Settings for User Entity Instance: Multiplicador:u_Multiplicador|Counter:counter
- 38. Parameter Settings for User Entity Instance: mux:u_mux_ex_res
- 39. Parameter Settings for User Entity Instance: register:u_reg_EXMEM_D
- 40. Parameter Settings for User Entity Instance: register:u_reg_EXMEM_B
- 41. Parameter Settings for User Entity Instance: register:u_reg_EXMEM_CTRL
- 42. Parameter Settings for User Entity Instance: ADDRDecoding:u_ADDRDecoding_Data
- 43. Parameter Settings for User Entity Instance: datamemory:u_datamemory|altsyncram:altsyncram_component
- 44. Parameter Settings for User Entity Instance: register:u_reg_MEMWB_D
- 45. Parameter Settings for User Entity Instance: register:u_reg_MEMWB_EXT
- 46. Parameter Settings for User Entity Instance: register:u_reg_MEMWB_CS
- 47. Parameter Settings for User Entity Instance: register:u_reg_MEMWB_CTRL
- 48. Parameter Settings for User Entity Instance: mux:u_mux_mem
- 49. Parameter Settings for User Entity Instance: mux:u_mux_wb
- 50. altpll Parameter Settings by Entity Instance
- 51. altsyncram Parameter Settings by Entity Instance
- 52. Port Connectivity Checks: "Multiplicador:u_Multiplicador|ACC:acc"
- 53. Port Connectivity Checks: "Multiplicador:u_Multiplicador"
- 54. Port Connectivity Checks: "control:u_control"
- 55. Post-Synthesis Netlist Statistics for Top Partition
- 56. Elapsed Time Per Partition
- 57. Analysis & Synthesis Messages
+ 30. Parameter Settings for User Entity Instance: register:u_reg_IDEX_CTRL
+ 31. Parameter Settings for User Entity Instance: mux:u_mux_alu_b
+ 32. Parameter Settings for User Entity Instance: alu:u_alu
+ 33. Parameter Settings for User Entity Instance: Multiplicador:u_Multiplicador
+ 34. Parameter Settings for User Entity Instance: Multiplicador:u_Multiplicador|Adder:adder
+ 35. Parameter Settings for User Entity Instance: Multiplicador:u_Multiplicador|ACC:acc
+ 36. Parameter Settings for User Entity Instance: Multiplicador:u_Multiplicador|Counter:counter
+ 37. Parameter Settings for User Entity Instance: mux:u_mux_ex_res
+ 38. Parameter Settings for User Entity Instance: register:u_reg_EXMEM_D
+ 39. Parameter Settings for User Entity Instance: register:u_reg_EXMEM_B
+ 40. Parameter Settings for User Entity Instance: register:u_reg_EXMEM_CTRL
+ 41. Parameter Settings for User Entity Instance: ADDRDecoding:u_ADDRDecoding_Data
+ 42. Parameter Settings for User Entity Instance: datamemory:u_datamemory|altsyncram:altsyncram_component
+ 43. Parameter Settings for User Entity Instance: register:u_reg_MEMWB_D
+ 44. Parameter Settings for User Entity Instance: register:u_reg_MEMWB_EXT
+ 45. Parameter Settings for User Entity Instance: register:u_reg_MEMWB_CS
+ 46. Parameter Settings for User Entity Instance: register:u_reg_MEMWB_CTRL
+ 47. Parameter Settings for User Entity Instance: mux:u_mux_mem
+ 48. Parameter Settings for User Entity Instance: mux:u_mux_wb
+ 49. altpll Parameter Settings by Entity Instance
+ 50. altsyncram Parameter Settings by Entity Instance
+ 51. Port Connectivity Checks: "register:u_reg_MEMWB_CTRL"
+ 52. Port Connectivity Checks: "register:u_reg_MEMWB_CS"
+ 53. Port Connectivity Checks: "register:u_reg_MEMWB_EXT"
+ 54. Port Connectivity Checks: "register:u_reg_MEMWB_D"
+ 55. Port Connectivity Checks: "register:u_reg_EXMEM_CTRL"
+ 56. Port Connectivity Checks: "register:u_reg_EXMEM_B"
+ 57. Port Connectivity Checks: "register:u_reg_EXMEM_D"
+ 58. Port Connectivity Checks: "Multiplicador:u_Multiplicador|ACC:acc"
+ 59. Port Connectivity Checks: "Multiplicador:u_Multiplicador"
+ 60. Port Connectivity Checks: "register:u_reg_IDEX_IMM"
+ 61. Port Connectivity Checks: "register:u_reg_IDEX_B"
+ 62. Port Connectivity Checks: "register:u_reg_IDEX_A"
+ 63. Port Connectivity Checks: "control:u_control"
+ 64. Post-Synthesis Netlist Statistics for Top Partition
+ 65. Elapsed Time Per Partition
+ 66. Analysis & Synthesis Messages
 
 
 
@@ -88,15 +97,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 26 21:23:58 2026       ;
+; Analysis & Synthesis Status        ; Successful - Fri Nov 27 00:23:17 2026       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; risc                                        ;
 ; Top-level Entity Name              ; risc                                        ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 3,059                                       ;
-;     Total combinational functions  ; 1,954                                       ;
-;     Dedicated logic registers      ; 1,370                                       ;
-; Total registers                    ; 1370                                        ;
+; Total logic elements               ; 3,074                                       ;
+;     Total combinational functions  ; 1,969                                       ;
+;     Dedicated logic registers      ; 1,338                                       ;
+; Total registers                    ; 1338                                        ;
 ; Total pins                         ; 165                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 65,536                                      ;
@@ -272,8 +281,8 @@ refer to the applicable agreement for further details.
 ;     -- PLLs              ; 1                ;
 ;                          ;                  ;
 ; Maximum fan-out node     ; CLK_SYS          ;
-; Maximum fan-out          ; 1436             ;
-; Total fan-out            ; 13296            ;
+; Maximum fan-out          ; 1404             ;
+; Total fan-out            ; 13257            ;
 ; Average fan-out          ; 3.58             ;
 +--------------------------+------------------+
 
@@ -283,7 +292,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                          ; Entity Name       ; Library Name ;
 +--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-------------------+--------------+
-; |risc                                      ; 1954 (198)          ; 1370 (36)                 ; 65536       ; 0            ; 0       ; 0         ; 0         ; 165  ; 0            ; |risc                                                                                        ; risc              ; work         ;
+; |risc                                      ; 1969 (128)          ; 1338 (36)                 ; 65536       ; 0            ; 0       ; 0         ; 0         ; 165  ; 0            ; |risc                                                                                        ; risc              ; work         ;
 ;    |ADDRDecoding:u_ADDRDecoding_Data|      ; 40 (40)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|ADDRDecoding:u_ADDRDecoding_Data                                                       ; ADDRDecoding      ; work         ;
 ;    |ADDRDecoding_Prog:u_ADDRDecoding_Prog| ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|ADDRDecoding_Prog:u_ADDRDecoding_Prog                                                  ; ADDRDecoding_Prog ; work         ;
 ;    |InstMem:u_InstMem|                     ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|InstMem:u_InstMem                                                                      ; InstMem           ; work         ;
@@ -298,21 +307,20 @@ refer to the applicable agreement for further details.
 ;       |altpll:altpll_component|            ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|PLL:u_PLL|altpll:altpll_component                                                      ; altpll            ; work         ;
 ;          |PLL_altpll:auto_generated|       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|PLL:u_PLL|altpll:altpll_component|PLL_altpll:auto_generated                            ; PLL_altpll        ; work         ;
 ;    |alu:u_alu|                             ; 107 (107)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|alu:u_alu                                                                              ; alu               ; work         ;
-;    |control:u_control|                     ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|control:u_control                                                                      ; control           ; work         ;
+;    |control:u_control|                     ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|control:u_control                                                                      ; control           ; work         ;
 ;    |datamemory:u_datamemory|               ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|datamemory:u_datamemory                                                                ; datamemory        ; work         ;
 ;       |altsyncram:altsyncram_component|    ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|datamemory:u_datamemory|altsyncram:altsyncram_component                                ; altsyncram        ; work         ;
 ;          |altsyncram_28i1:auto_generated|  ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|datamemory:u_datamemory|altsyncram:altsyncram_component|altsyncram_28i1:auto_generated ; altsyncram_28i1   ; work         ;
 ;    |mux:u_mux_alu_b|                       ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|mux:u_mux_alu_b                                                                        ; mux               ; work         ;
 ;    |mux:u_mux_wb|                          ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|mux:u_mux_wb                                                                           ; mux               ; work         ;
-;    |pc:u_pc|                               ; 32 (32)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|pc:u_pc                                                                                ; pc                ; work         ;
+;    |pc:u_pc|                               ; 98 (98)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|pc:u_pc                                                                                ; pc                ; work         ;
 ;    |register:u_reg_EXMEM_B|                ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_EXMEM_B                                                                 ; register          ; work         ;
 ;    |register:u_reg_EXMEM_CTRL|             ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_EXMEM_CTRL                                                              ; register          ; work         ;
 ;    |register:u_reg_EXMEM_D|                ; 32 (32)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_EXMEM_D                                                                 ; register          ; work         ;
 ;    |register:u_reg_IDEX_A|                 ; 4 (4)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_IDEX_A                                                                  ; register          ; work         ;
 ;    |register:u_reg_IDEX_B|                 ; 4 (4)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_IDEX_B                                                                  ; register          ; work         ;
-;    |register:u_reg_IDEX_CTRL|              ; 0 (0)               ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_IDEX_CTRL                                                               ; register          ; work         ;
+;    |register:u_reg_IDEX_CTRL|              ; 20 (20)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_IDEX_CTRL                                                               ; register          ; work         ;
 ;    |register:u_reg_IDEX_IMM|               ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_IDEX_IMM                                                                ; register          ; work         ;
-;    |register:u_reg_IDEX_PC4|               ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_IDEX_PC4                                                                ; register          ; work         ;
 ;    |register:u_reg_MEMWB_CS|               ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_MEMWB_CS                                                                ; register          ; work         ;
 ;    |register:u_reg_MEMWB_CTRL|             ; 0 (0)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_MEMWB_CTRL                                                              ; register          ; work         ;
 ;    |register:u_reg_MEMWB_D|                ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |risc|register:u_reg_MEMWB_D                                                                 ; register          ; work         ;
@@ -371,12 +379,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1370  ;
+; Total registers                              ; 1338  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 64    ;
+; Number of registers using Synchronous Load   ; 58    ;
 ; Number of registers using Asynchronous Clear ; 1130  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1028  ;
+; Number of registers using Clock Enable       ; 1034  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -386,7 +394,7 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; flush_if                               ; 32      ;
+; flush_if_reg                           ; 32      ;
 ; id_CS_P                                ; 32      ;
 ; Total number of inverted registers = 2 ;         ;
 +----------------------------------------+---------+
@@ -398,17 +406,18 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |risc|Multiplicador:u_Multiplicador|Counter:counter|count[0]  ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |risc|register:u_reg_IDEX_CTRL|data_out[0]                    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |risc|pc:u_pc|data_out[8]                                     ;
-; 7:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |risc|Multiplicador:u_Multiplicador|ACC:acc|acc_reg[1]        ;
-; 7:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |risc|Multiplicador:u_Multiplicador|ACC:acc|acc_reg[26]       ;
-; 65:1               ; 3 bits    ; 129 LEs       ; 27 LEs               ; 102 LEs                ; Yes        ; |risc|register:u_reg_IDEX_CTRL|data_out[6]                    ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |risc|register:u_reg_IDEX_B|data_out[28]                      ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |risc|register:u_reg_IDEX_CTRL|data_out[4]                    ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |risc|pc:u_pc|data_out[28]                                    ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |risc|pc:u_pc|data_out[15]                                    ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |risc|Multiplicador:u_Multiplicador|ACC:acc|acc_reg[0]        ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |risc|Multiplicador:u_Multiplicador|ACC:acc|acc_reg[31]       ;
+; 65:1               ; 3 bits    ; 129 LEs       ; 27 LEs               ; 102 LEs                ; Yes        ; |risc|register:u_reg_IDEX_CTRL|data_out[5]                    ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |risc|register:u_reg_IDEX_B|data_out[12]                      ;
 ; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |risc|register:u_reg_IDEX_A|data_out[11]                      ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |risc|alu:u_alu|data_out[14]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |risc|alu:u_alu|data_out[8]                                   ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |risc|comb                                                    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |risc|mux:u_mux_wb|data_out[2]                                ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |risc|Multiplicador:u_Multiplicador|CONTROL:control|Selector1 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |risc|mux:u_mux_wb|data_out[14]                               ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |risc|Multiplicador:u_Multiplicador|CONTROL:control|Selector3 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 
 
@@ -485,70 +494,6 @@ Encoding Type:  One-Hot
 ; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; CLK_SYS            ;
 ; IGNORE_LCELL_BUFFERS         ; off   ; -    ; CLK_MUL            ;
 ; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; CLK_MUL            ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[31]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[31]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[30]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[30]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[29]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[29]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[28]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[28]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[27]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[27]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[26]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[26]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[25]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[25]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[24]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[24]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[23]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[23]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[22]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[22]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[21]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[21]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[20]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[20]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[19]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[19]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[18]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[18]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[17]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[17]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[16]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[16]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[15]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[15]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[14]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[14]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[13]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[13]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[12]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[12]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[11]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[11]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[10]             ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[10]             ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[9]              ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[9]              ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[8]              ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[8]              ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[7]              ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[7]              ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[6]              ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[6]              ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[5]              ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[5]              ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[4]              ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[4]              ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[3]              ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[3]              ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[2]              ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[2]              ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[1]              ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[1]              ;
-; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[0]              ;
-; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[0]              ;
 ; IGNORE_LCELL_BUFFERS         ; off   ; -    ; writeBack_data[31] ;
 ; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; writeBack_data[31] ;
 ; IGNORE_LCELL_BUFFERS         ; off   ; -    ; writeBack_data[30] ;
@@ -613,6 +558,70 @@ Encoding Type:  One-Hot
 ; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; writeBack_data[1]  ;
 ; IGNORE_LCELL_BUFFERS         ; off   ; -    ; writeBack_data[0]  ;
 ; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; writeBack_data[0]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[31]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[31]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[30]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[30]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[29]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[29]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[28]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[28]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[27]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[27]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[26]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[26]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[25]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[25]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[24]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[24]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[23]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[23]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[22]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[22]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[21]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[21]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[20]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[20]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[19]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[19]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[18]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[18]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[17]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[17]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[16]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[16]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[15]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[15]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[14]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[14]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[13]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[13]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[12]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[12]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[11]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[11]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[10]             ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[10]             ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[9]              ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[9]              ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[8]              ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[8]              ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[7]              ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[7]              ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[6]              ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[6]              ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[5]              ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[5]              ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[4]              ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[4]              ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[3]              ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[3]              ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[2]              ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[2]              ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[1]              ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[1]              ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; PC[0]              ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; PC[0]              ;
 +------------------------------+-------+------+--------------------+
 
 
@@ -1178,17 +1187,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: register:u_reg_IDEX_PC4 ;
-+----------------+-------+---------------------------------------------+
-; Parameter Name ; Value ; Type                                        ;
-+----------------+-------+---------------------------------------------+
-; WIDTH          ; 32    ; Signed Integer                              ;
-; USE_RESET      ; 0     ; Signed Integer                              ;
-+----------------+-------+---------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-----------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: register:u_reg_IDEX_CTRL ;
 +----------------+-------+----------------------------------------------+
@@ -1486,6 +1484,69 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+---------------------------------------------------------+
 
 
++-------------------------------------------------------+
+; Port Connectivity Checks: "register:u_reg_MEMWB_CTRL" ;
++------+-------+----------+-----------------------------+
+; Port ; Type  ; Severity ; Details                     ;
++------+-------+----------+-----------------------------+
+; clr  ; Input ; Info     ; Stuck at GND                ;
++------+-------+----------+-----------------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "register:u_reg_MEMWB_CS" ;
++------+-------+----------+---------------------------+
+; Port ; Type  ; Severity ; Details                   ;
++------+-------+----------+---------------------------+
+; clr  ; Input ; Info     ; Stuck at GND              ;
++------+-------+----------+---------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "register:u_reg_MEMWB_EXT" ;
++------+-------+----------+----------------------------+
+; Port ; Type  ; Severity ; Details                    ;
++------+-------+----------+----------------------------+
+; clr  ; Input ; Info     ; Stuck at GND               ;
++------+-------+----------+----------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "register:u_reg_MEMWB_D" ;
++------+-------+----------+--------------------------+
+; Port ; Type  ; Severity ; Details                  ;
++------+-------+----------+--------------------------+
+; clr  ; Input ; Info     ; Stuck at GND             ;
++------+-------+----------+--------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "register:u_reg_EXMEM_CTRL" ;
++------+-------+----------+-----------------------------+
+; Port ; Type  ; Severity ; Details                     ;
++------+-------+----------+-----------------------------+
+; clr  ; Input ; Info     ; Stuck at GND                ;
++------+-------+----------+-----------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "register:u_reg_EXMEM_B" ;
++------+-------+----------+--------------------------+
+; Port ; Type  ; Severity ; Details                  ;
++------+-------+----------+--------------------------+
+; clr  ; Input ; Info     ; Stuck at GND             ;
++------+-------+----------+--------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "register:u_reg_EXMEM_D" ;
++------+-------+----------+--------------------------+
+; Port ; Type  ; Severity ; Details                  ;
++------+-------+----------+--------------------------+
+; clr  ; Input ; Info     ; Stuck at GND             ;
++------+-------+----------+--------------------------+
+
+
 +----------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "Multiplicador:u_Multiplicador|ACC:acc"                                                    ;
 +------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -1505,6 +1566,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++-----------------------------------------------------+
+; Port Connectivity Checks: "register:u_reg_IDEX_IMM" ;
++------+-------+----------+---------------------------+
+; Port ; Type  ; Severity ; Details                   ;
++------+-------+----------+---------------------------+
+; clr  ; Input ; Info     ; Stuck at GND              ;
++------+-------+----------+---------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "register:u_reg_IDEX_B" ;
++------+-------+----------+-------------------------+
+; Port ; Type  ; Severity ; Details                 ;
++------+-------+----------+-------------------------+
+; clr  ; Input ; Info     ; Stuck at GND            ;
++------+-------+----------+-------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "register:u_reg_IDEX_A" ;
++------+-------+----------+-------------------------+
+; Port ; Type  ; Severity ; Details                 ;
++------+-------+----------+-------------------------+
+; clr  ; Input ; Info     ; Stuck at GND            ;
++------+-------+----------+-------------------------+
+
+
 +-------------------------------------------------------+
 ; Port Connectivity Checks: "control:u_control"         ;
 +----------+--------+----------+------------------------+
@@ -1520,27 +1608,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 165                         ;
-; cycloneiii_ff         ; 1370                        ;
+; cycloneiii_ff         ; 1338                        ;
 ;     CLR               ; 70                          ;
-;     CLR SLD           ; 32                          ;
-;     ENA CLR           ; 1028                        ;
+;     CLR SLD           ; 26                          ;
+;     ENA CLR           ; 1034                        ;
 ;     SLD               ; 32                          ;
-;     plain             ; 208                         ;
-; cycloneiii_lcell_comb ; 1956                        ;
-;     arith             ; 139                         ;
-;         2 data inputs ; 61                          ;
+;     plain             ; 176                         ;
+; cycloneiii_lcell_comb ; 1971                        ;
+;     arith             ; 168                         ;
+;         2 data inputs ; 90                          ;
 ;         3 data inputs ; 78                          ;
-;     normal            ; 1817                        ;
+;     normal            ; 1803                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 38                          ;
-;         2 data inputs ; 29                          ;
+;         1 data inputs ; 39                          ;
+;         2 data inputs ; 13                          ;
 ;         3 data inputs ; 211                         ;
-;         4 data inputs ; 1538                        ;
+;         4 data inputs ; 1539                        ;
 ; cycloneiii_ram_block  ; 64                          ;
 ; cycloneiv_pll         ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 12.10                       ;
-; Average LUT depth     ; 5.79                        ;
+; Average LUT depth     ; 5.85                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1549,7 +1637,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:06     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -1559,7 +1647,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Nov 26 21:23:31 2026
+    Info: Processing started: Fri Nov 27 00:22:51 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off risc -c risc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1701,9 +1789,9 @@ Info (12133): Instantiated megafunction "PLL:u_PLL|altpll:altpll_component" with
 Info (12021): Found 1 design units, including 1 entities, in source file db/PLL_altpll.v
     Info (12023): Found entity 1: PLL_altpll File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/db/PLL_altpll.v Line: 29
 Info (12128): Elaborating entity "PLL_altpll" for hierarchy "PLL:u_PLL|altpll:altpll_component|PLL_altpll:auto_generated" File: /home/lucas/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "pc" for hierarchy "pc:u_pc" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 88
-Info (12128): Elaborating entity "ADDRDecoding_Prog" for hierarchy "ADDRDecoding_Prog:u_ADDRDecoding_Prog" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 96
-Info (12128): Elaborating entity "InstMem" for hierarchy "InstMem:u_InstMem" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 102
+Info (12128): Elaborating entity "pc" for hierarchy "pc:u_pc" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 97
+Info (12128): Elaborating entity "ADDRDecoding_Prog" for hierarchy "ADDRDecoding_Prog:u_ADDRDecoding_Prog" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 105
+Info (12128): Elaborating entity "InstMem" for hierarchy "InstMem:u_InstMem" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 111
 Info (12128): Elaborating entity "altsyncram" for hierarchy "InstMem:u_InstMem|altsyncram:altsyncram_component" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/InstMem.v Line: 81
 Info (12130): Elaborated megafunction instantiation "InstMem:u_InstMem|altsyncram:altsyncram_component" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/InstMem.v Line: 81
 Info (12133): Instantiated megafunction "InstMem:u_InstMem|altsyncram:altsyncram_component" with the following parameter: File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/InstMem.v Line: 81
@@ -1724,29 +1812,31 @@ Info (12133): Instantiated megafunction "InstMem:u_InstMem|altsyncram:altsyncram
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jv91.tdf
     Info (12023): Found entity 1: altsyncram_jv91 File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/db/altsyncram_jv91.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_jv91" for hierarchy "InstMem:u_InstMem|altsyncram:altsyncram_component|altsyncram_jv91:auto_generated" File: /home/lucas/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "mux" for hierarchy "mux:u_mux_inst" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 123
-Info (12128): Elaborating entity "registerfile" for hierarchy "registerfile:u_registerfile" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 159
+Warning (113007): Byte addressed memory initialization file "Code.hex" was read in the word-addressed format File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Code.hex Line: 1
+Critical Warning (127005): Memory depth (1024) in the design file differs from memory depth (113) in the Memory Initialization File "/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Code.hex" -- setting initial value for remaining addresses to 0 File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/InstMem.v Line: 81
+Info (12128): Elaborating entity "mux" for hierarchy "mux:u_mux_inst" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 132
+Info (12128): Elaborating entity "registerfile" for hierarchy "registerfile:u_registerfile" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 164
 Warning (10240): Verilog HDL Always Construct warning at registerfile.v(21): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/registerfile.v Line: 21
-Info (12128): Elaborating entity "control" for hierarchy "control:u_control" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 174
+Info (12128): Elaborating entity "control" for hierarchy "control:u_control" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 179
 Warning (10230): Verilog HDL assignment warning at control.v(31): truncated value with size 32 to match size of target (6) File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/control.v Line: 31
 Warning (10230): Verilog HDL assignment warning at control.v(33): truncated value with size 32 to match size of target (6) File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/control.v Line: 33
 Warning (10230): Verilog HDL assignment warning at control.v(34): truncated value with size 32 to match size of target (6) File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/control.v Line: 34
 Warning (10230): Verilog HDL assignment warning at control.v(35): truncated value with size 32 to match size of target (6) File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/control.v Line: 35
 Warning (10230): Verilog HDL assignment warning at control.v(36): truncated value with size 32 to match size of target (6) File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/control.v Line: 36
 Warning (10230): Verilog HDL assignment warning at control.v(37): truncated value with size 32 to match size of target (6) File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/control.v Line: 37
-Info (12128): Elaborating entity "extend" for hierarchy "extend:u_extend" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 182
-Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_IDEX_A" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 194
-Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_IDEX_CTRL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 198
-Info (12128): Elaborating entity "alu" for hierarchy "alu:u_alu" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 232
-Info (12128): Elaborating entity "Multiplicador" for hierarchy "Multiplicador:u_Multiplicador" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 264
+Info (12128): Elaborating entity "extend" for hierarchy "extend:u_extend" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 187
+Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_IDEX_A" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 198
+Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_IDEX_CTRL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 201
+Info (12128): Elaborating entity "alu" for hierarchy "alu:u_alu" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 234
+Info (12128): Elaborating entity "Multiplicador" for hierarchy "Multiplicador:u_Multiplicador" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 261
 Info (12128): Elaborating entity "Adder" for hierarchy "Multiplicador:u_Multiplicador|Adder:adder" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Multiplicador/Multiplicador.v Line: 26
 Info (12128): Elaborating entity "ACC" for hierarchy "Multiplicador:u_Multiplicador|ACC:acc" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Multiplicador/Multiplicador.v Line: 36
 Info (10264): Verilog HDL Case Statement information at ACC.v(14): all case item expressions in this case statement are onehot File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Multiplicador/ACC.v Line: 14
 Info (12128): Elaborating entity "CONTROL" for hierarchy "Multiplicador:u_Multiplicador|CONTROL:control" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Multiplicador/Multiplicador.v Line: 49
 Info (12128): Elaborating entity "Counter" for hierarchy "Multiplicador:u_Multiplicador|Counter:counter" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/Multiplicador/Multiplicador.v Line: 57
-Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_EXMEM_CTRL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 283
-Info (12128): Elaborating entity "ADDRDecoding" for hierarchy "ADDRDecoding:u_ADDRDecoding_Data" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 309
-Info (12128): Elaborating entity "datamemory" for hierarchy "datamemory:u_datamemory" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 317
+Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_EXMEM_CTRL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 280
+Info (12128): Elaborating entity "ADDRDecoding" for hierarchy "ADDRDecoding:u_ADDRDecoding_Data" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 306
+Info (12128): Elaborating entity "datamemory" for hierarchy "datamemory:u_datamemory" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 314
 Info (12128): Elaborating entity "altsyncram" for hierarchy "datamemory:u_datamemory|altsyncram:altsyncram_component" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/datamemory.v Line: 85
 Info (12130): Elaborated megafunction instantiation "datamemory:u_datamemory|altsyncram:altsyncram_component" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/datamemory.v Line: 85
 Info (12133): Instantiated megafunction "datamemory:u_datamemory|altsyncram:altsyncram_component" with the following parameter: File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/datamemory.v Line: 85
@@ -1768,56 +1858,56 @@ Info (12133): Instantiated megafunction "datamemory:u_datamemory|altsyncram:alts
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_28i1.tdf
     Info (12023): Found entity 1: altsyncram_28i1 File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/db/altsyncram_28i1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_28i1" for hierarchy "datamemory:u_datamemory|altsyncram:altsyncram_component|altsyncram_28i1:auto_generated" File: /home/lucas/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_MEMWB_CS" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 332
-Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_MEMWB_CTRL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 333
-Info (13000): Registers with preset signals will power-up high File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 65
+Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_MEMWB_CS" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 329
+Info (12128): Elaborating entity "register" for hierarchy "register:u_reg_MEMWB_CTRL" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 330
+Info (13000): Registers with preset signals will power-up high File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 78
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "PC[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
-    Info (17048): Logic cell "PC[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 56
+    Info (17048): Logic cell "PC[0]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[1]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[2]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[3]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[4]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[5]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[6]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[7]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[8]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[9]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[10]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[11]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[12]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[13]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[14]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[15]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[16]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[17]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[18]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[19]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[20]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[21]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[22]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[23]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[24]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[25]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[26]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[27]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[28]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[29]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[30]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
+    Info (17048): Logic cell "PC[31]" File: /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc.v Line: 71
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3403 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3385 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 66 input pins
     Info (21059): Implemented 99 output pins
-    Info (21061): Implemented 3173 logic cells
+    Info (21061): Implemented 3155 logic cells
     Info (21064): Implemented 64 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 1098 megabytes
-    Info: Processing ended: Thu Nov 26 21:23:58 2026
-    Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:01:00
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 1094 megabytes
+    Info: Processing ended: Fri Nov 27 00:23:17 2026
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:55
 
 

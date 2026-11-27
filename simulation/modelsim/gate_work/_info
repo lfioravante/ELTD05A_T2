@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 d/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/simulation/modelsim
 vrisc
-Z1 !s110 1795739496
+Z1 !s110 1795749905
 !i10b 1
-!s100 _2V?RoDCPbnOOQRm5kd=Y0
-Inc^ZYT8:TX2R[S07^1;c`3
+!s100 ?nNn8]H4A?Q<KJ`05h?<O1
+I@emlf4oVG;^hK@MWN61_U3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1795739124
+w1795749873
 8risc_7_1200mv_85c_slow.vo
 Frisc_7_1200mv_85c_slow.vo
 L0 31
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1795739495.000000
+!s108 1795749904.000000
 !s107 risc_7_1200mv_85c_slow.vo|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|risc_7_1200mv_85c_slow.vo|
 !i113 1
@@ -33,11 +33,11 @@ Z5 tCvgOpt 0
 vrisc_TB
 R1
 !i10b 1
-!s100 GPCW5ImT69nPzNc;AF8kX2
-III`mV;KN5UW;TVBBfb]_W3
+!s100 GaaVZI7eKX2zbcKC0H>Qn0
+IeKB]MGZ>LW>E:XO[NGHO=3
 R2
 R0
-w1795736388
+w1795748406
 8/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc_TB.v
 F/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc_TB.v
 L0 3
@@ -45,7 +45,7 @@ R3
 r1
 !s85 0
 31
-!s108 1795739496.000000
+!s108 1795749905.000000
 !s107 /home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc_TB.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2|/home/lucas/Documents/UNIFEI/2026.2/PSDigitais/trabalho2/ELTD05A_T2/risc_TB.v|
 !i113 1

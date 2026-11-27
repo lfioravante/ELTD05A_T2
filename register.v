@@ -4,6 +4,7 @@ module register #(
 )(
     input                  clk,
     input                  rst,
+    input                  clr,
     input      [WIDTH-1:0] data_in,
     output reg [WIDTH-1:0] data_out
 );
@@ -11,6 +12,8 @@ module register #(
         if (USE_RESET) begin : g_rst
             always @(posedge clk or posedge rst) begin
                 if (rst)
+                    data_out <= {WIDTH{1'b0}};
+                else if (clr)
                     data_out <= {WIDTH{1'b0}};
                 else
                     data_out <= data_in;
